@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Alienated"
-run/main_scene="uid://djlh8dpdhnjbd"
+run/main_scene="uid://dxflhmrn14h31"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,11 @@ buses/default_bus_layout="uid://bmlmyanfv2egt"
 
 Master="*uid://chmqj0wfceh60"
 JsonReader="*uid://cdnfm20gjaesv"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [physics]
 

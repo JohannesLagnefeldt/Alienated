@@ -13,11 +13,9 @@ func _ready() -> void:
 	#for n in self.get_children():
 	#	remove_child(n)
 	for i in Master.secret_masks.size():
-		var c = preload("res://scenes/mask.tscn").instantiate()
+		var c : Panel = preload("res://scenes/alian_mask.tscn").instantiate()
 		add_child(c)
+		var styleBox: StyleBoxTexture = StyleBoxTexture.new()
+		c.add_theme_stylebox_override("panel", styleBox)
+		styleBox.set("texture", Master.secret_masks[i].mask_texture)
 		input_masks.append(c)
-	for j in get_children():
-		var selector = preload("res://scenes/Selector.tscn").instantiate()
-		selector_box.add_child(selector)
-		selector.toggle_on(false)
-		selectors.append(selector)

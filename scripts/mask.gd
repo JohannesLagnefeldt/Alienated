@@ -2,7 +2,7 @@ extends Panel
 
 var mouse_hovering: bool = false
 var styleBox: StyleBoxTexture = get_theme_stylebox("panel").duplicate()
-var index: int = 0
+@export var index: int = 0
 
 @onready var audio_toggle_mask: AudioStreamPlayer2D = $AudioToggleMask
 
