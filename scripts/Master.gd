@@ -8,7 +8,7 @@ var MASK_TEXTURES : Array[Texture2D] = [
 ]
 
 var current_masks : Array[int] = []
-var secret_masks : Array[int] = []
+var secret_masks : Array = []
 var guess : Array[int] = []
 var masks_in_guess: int = 4;
 
@@ -33,6 +33,8 @@ func try_solve() -> Vector2:
 	var temp = secret_masks.duplicate()
 	var result : Vector2 = Vector2.ZERO
 	for i : int in range(temp.size()):
+		print("temp: ", temp)
+		print("guess: ", guess)
 		if temp[i] == guess[i]:
 			temp[i] = 0
 			result.x += 1
