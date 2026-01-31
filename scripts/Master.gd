@@ -1,5 +1,12 @@
 extends Node
 
+var MASK_TEXTURES : Array[Texture2D] = [
+	preload("res://assets/Placeholder oni mask blue.png"),
+	preload("res://assets/Placeholder oni mask Emerald.png"),
+	preload("res://assets/Placeholder oni mask Orange.png"),
+	preload("res://assets/Placeholder oni mask Red.png")
+]
+
 var current_masks : Array[int] = []
 var secret_masks : Array[int] = []
 var guess : Array[int] = []
