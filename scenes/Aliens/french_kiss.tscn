@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5yxvc8m7fkqr"]
 
-[ext_resource type="Texture2D" uid="uid://cbtyij6s02lu4" path="res://assets/sprites/FrenchKiss/French kiss body.png" id="1_q23bj"]
+[ext_resource type="Texture2D" uid="uid://sbcnnyby4wrt" path="res://assets/sprites/FrenchKiss/French kiss body pupilless.png" id="1_x7dj7"]
 [ext_resource type="Texture2D" uid="uid://c1rk1rj5q1ck5" path="res://assets/sprites/FrenchKiss/T1.png" id="2_f5mwj"]
 [ext_resource type="Texture2D" uid="uid://cmhoicpdyjaom" path="res://assets/sprites/FrenchKiss/T2.png" id="3_x7dj7"]
 [ext_resource type="Texture2D" uid="uid://imgyqgk6fb2f" path="res://assets/sprites/FrenchKiss/T3.png" id="4_fi54h"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://se8t1hmisx0g" path="res://assets/sprites/FrenchKiss/T5.png" id="6_4x4r2"]
 [ext_resource type="Texture2D" uid="uid://0e42gfn8kq5h" path="res://assets/sprites/FrenchKiss/T6.png" id="7_0awte"]
 [ext_resource type="Texture2D" uid="uid://cs11iaw06wrfh" path="res://assets/sprites/FrenchKiss/T7.png" id="8_f5mwj"]
+[ext_resource type="Texture2D" uid="uid://tpnkfujg61tp" path="res://assets/sprites/FrenchKiss/French kiss eye detail.png" id="9_fi54h"]
 
 [sub_resource type="Animation" id="Animation_f5mwj"]
 resource_name = "Body"
@@ -111,39 +112,1044 @@ _data = {
 &"RESET": SubResource("Animation_x7dj7")
 }
 
+[sub_resource type="Animation" id="Animation_4x4r2"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.715585, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.235, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0awte"]
+resource_name = "ToungeSwing"
+length = 2.7
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.715585, -0.25, 0, 1, 0, -0.43109632, -1, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.6970298)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.235, -0.25, 0, 0.5, 0, 1.022, -0.5, 0, 0.5, 0, 1.235, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3666667, 2.6970298)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.245, -0.25, 0, 0.5, 0, 1.185, -0.5, 0, 0.5, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3666667, 2.6970298)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ufkk"]
+_data = {
+&"RESET": SubResource("Animation_4x4r2"),
+&"ToungeSwing": SubResource("Animation_0awte")
+}
+
+[sub_resource type="Animation" id="Animation_u0ya3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.765, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7pqt4"]
+resource_name = "TongueStretch"
+length = 1.8666667
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.11, -0.25, 0, 0.25, 0, 0.915, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.866029)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.765, -0.25, 0, 0.25, 0, 1.12, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.866029)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_447s5"]
+_data = {
+&"RESET": SubResource("Animation_u0ya3"),
+&"TongueStretch": SubResource("Animation_7pqt4")
+}
+
+[sub_resource type="Animation" id="Animation_447s5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_lqlau"]
+resource_name = "TongueStretch"
+length = 3.5666666
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.17, -0.25, 0, 1, 0, 0.93, -1, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.5666666)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.705, -0.25, 0, 0.25, 0, 1.105, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.5666666)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83o06"]
+_data = {
+&"RESET": SubResource("Animation_447s5"),
+&"TongueStretch": SubResource("Animation_lqlau")
+}
+
+[sub_resource type="Animation" id="Animation_83o06"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.21642083, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2ebej"]
+resource_name = "tongueSwing"
+length = 2.2
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.21642083, -0.25, 0, 0.25, 0, -0.23736478, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.0666667, 2.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.0666667, 2.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v67aq"]
+_data = {
+&"RESET": SubResource("Animation_83o06"),
+&"tongueSwing": SubResource("Animation_2ebej")
+}
+
+[sub_resource type="Animation" id="Animation_5ufkk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-9.1552734e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.07, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.36826447, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(7.4505815e-09, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_g2gj5"]
+resource_name = "TongueSwing"
+length = 2.1
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-9.1552734e-05, -0.25, 0, 0.25, 0, -108.00001, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -20.999998, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.07, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.36826447, -0.25, 0, 0.25, 0, -0.28099802, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(7.4505815e-09, -0.25, 0, 0.25, 0, 7.4505815e-09, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08h8j"]
+_data = {
+&"RESET": SubResource("Animation_5ufkk"),
+&"TongueSwing": SubResource("Animation_g2gj5")
+}
+
+[sub_resource type="Animation" id="Animation_08h8j"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-393.9641, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5.986991, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5550147, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.0277847, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.0909318, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.05952263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7lp72"]
+resource_name = "TongueSwing"
+length = 3.2333333
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-393.9641, -0.25, 0, 0.25, 0, -295.7468, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.2333333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(5.986991, -0.25, 0, 0.25, 0, 1.9344554, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.2333333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.5550147, -0.25, 0, 0.25, 0, 0.12217305, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.2333333)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.0277847, -0.25, 0, 0.25, 0, 1.178, -0.25, 0, 0.25, 0, 1.0277847, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6607659, 3.2333333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.0909318, -0.25, 0, 0.25, 0, 1.076, -0.25, 0, 0.25, 0, 1.0909318, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6607659, 3.2333333)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.12391838, -0.25, 0, 0.25, 0, -0.13613568, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.2333333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0ya3"]
+_data = {
+&"RESET": SubResource("Animation_08h8j"),
+&"TongueSwing": SubResource("Animation_7lp72")
+}
+
+[sub_resource type="Animation" id="Animation_oe7rh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25307274, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-359, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5201081, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.995, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.105, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_fi54h"]
+resource_name = "TongueLeft"
+length = 3.0333333
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -1, 0, 1, 0, 0.25307274, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.0333333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-359, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1, 0, 0.5201081, -1, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.0333333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.055, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5333333, 3.0333333)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.5, 0, 1.18, -0.5, 0, 0.5, 0, 1, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5333333, 3.0333333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oe7rh"]
+_data = {
+&"RESET": SubResource("Animation_oe7rh"),
+&"TongueLeft": SubResource("Animation_fi54h")
+}
+
+[sub_resource type="Animation" id="Animation_tyjg6"]
+resource_name = "PupilAnim"
+length = 20.933332
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(188.5024, -0.25, 0, 0.25, 0, 126.34033, -0.25, 0, 0.25, 0, 431.33282, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.03582, 9.383901)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-317.6784, -0.25, 0, 0.25, 0, -298.0237, -0.25, 0, 0.25, 0, -354.9422, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.03582, 9.383901)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.9665285, -0.25, 0, 0.25, 0, 0.942, -0.25, 0, 0.25, 0, 0.692, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.03582, 9.383901)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.0326953, -0.25, 0, 0.25, 0, 1.006, -0.25, 0, 0.25, 0, 0.74, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.03582, 9.383901)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 9.383901)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.06981317, -0.25, 0, 0.25, 0, 0.17278759, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.03582, 9.383901)
+}
+
+[sub_resource type="Animation" id="Animation_xqc80"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(188.5024, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-317.6784, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.9665285, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.0326953, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2rc8v"]
+_data = {
+&"PupilAnim": SubResource("Animation_tyjg6"),
+&"RESET": SubResource("Animation_xqc80")
+}
+
 [node name="FrenchKiss" type="Node" unique_id=1538727699]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=932933390]
 position = Vector2(-4, 6)
 
 [node name="FrenchKissBody" type="Sprite2D" parent="Node2D" unique_id=1692312329]
-position = Vector2(-207, -38)
-texture = ExtResource("1_q23bj")
+position = Vector2(-4, 6)
+texture = ExtResource("1_x7dj7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/FrenchKissBody" unique_id=1840917612]
 libraries/ = SubResource("AnimationLibrary_fi54h")
+autoplay = &"Body"
 
-[node name="ToungeFrontLeft" type="Sprite2D" parent="Node2D/FrenchKissBody" unique_id=1437309940]
+[node name="Node2D7" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=1295273469]
+scale = Vector2(1.235, 1)
+skew = 0.715585
+
+[node name="ToungeFrontLeft" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D7" unique_id=1437309940]
+z_index = 1
 texture = ExtResource("2_f5mwj")
 
-[node name="TongueBackLeft" type="Sprite2D" parent="Node2D/FrenchKissBody" unique_id=880062592]
+[node name="AnimationTongueFrontLeft" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D7/ToungeFrontLeft" unique_id=984149001]
+libraries/ = SubResource("AnimationLibrary_5ufkk")
+
+[node name="Node2D6" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=1677310481]
+position = Vector2(-22.387396, -422.2411)
+scale = Vector2(1.11, 0.765)
+
+[node name="TongueBackLeft" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D6" unique_id=880062592]
 z_index = -1
+position = Vector2(22.38739, 422.2411)
+scale = Vector2(0.99999994, 0.9999999)
 texture = ExtResource("3_x7dj7")
 
-[node name="TongueBackRight" type="Sprite2D" parent="Node2D/FrenchKissBody" unique_id=15870418]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D6/TongueBackLeft" unique_id=1731921833]
+libraries/ = SubResource("AnimationLibrary_447s5")
+
+[node name="Node2D5" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=1427302910]
+position = Vector2(566.75934, -490.54865)
+
+[node name="TongueBackRight" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D5" unique_id=15870418]
 z_index = -1
+position = Vector2(-566.7594, 490.54868)
+scale = Vector2(0.9999999, 0.99999994)
 texture = ExtResource("4_fi54h")
 
-[node name="ToungeRight" type="Sprite2D" parent="Node2D/FrenchKissBody" unique_id=1512380419]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D5/TongueBackRight" unique_id=1006644823]
+libraries/ = SubResource("AnimationLibrary_83o06")
+
+[node name="Node2D4" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=346197870]
+position = Vector2(914.898, -186.17271)
+skew = 0.21642083
+
+[node name="ToungeRight" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D4" unique_id=1512380419]
+position = Vector2(-914.8981, 186.17271)
 texture = ExtResource("5_oe7rh")
 
-[node name="ToungeFrontRight" type="Sprite2D" parent="Node2D/FrenchKissBody" unique_id=879668327]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D4/ToungeRight" unique_id=1327491634]
+libraries/ = SubResource("AnimationLibrary_v67aq")
+
+[node name="Node2D3" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=730923379]
+position = Vector2(-9.1552734e-05, 0)
+scale = Vector2(1.07, 1)
+skew = 0.36826447
+
+[node name="TongueFrontRight" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D3" unique_id=879668327]
+position = Vector2(9.1552734e-05, 0)
+scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("6_4x4r2")
 
-[node name="ToungeLeftBack" type="Sprite2D" parent="Node2D/FrenchKissBody" unique_id=1519137336]
+[node name="AnimationTongueFrontRight" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D3/TongueFrontRight" unique_id=2035310923]
+libraries/ = SubResource("AnimationLibrary_08h8j")
+
+[node name="Node2D2" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=848193843]
+position = Vector2(-393.9641, 5.986991)
+rotation = 0.5550147
+scale = Vector2(1.0277847, 1.0909318)
+skew = 0.05952263
+
+[node name="TongueLeftBack" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D2" unique_id=1519137336]
 z_index = -1
+position = Vector2(341.5005, -53.897797)
+rotation = -0.11636068
+scale = Vector2(0.9651468, 0.92830145)
+skew = -0.07468879
 texture = ExtResource("7_0awte")
 
-[node name="ToungeLeftFront" type="Sprite2D" parent="Node2D/FrenchKissBody" unique_id=199549997]
-position = Vector2(0, -2)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D2/TongueLeftBack" unique_id=1433560615]
+libraries/ = SubResource("AnimationLibrary_u0ya3")
+
+[node name="Node2D" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=866256056]
+position = Vector2(-359, 15)
+rotation = 0.5201081
+scale = Vector2(0.995, 1.105)
+skew = 0.25307274
+
+[node name="TongueLeftFront" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D" unique_id=199549997]
+position = Vector2(359, -17)
 texture = ExtResource("8_f5mwj")
+
+[node name="AnimationTongueLeft" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D/TongueLeftFront" unique_id=1145227882]
+libraries/ = SubResource("AnimationLibrary_oe7rh")
+autoplay = &"TongueLeft"
+
+[node name="Node2D8" type="Node2D" parent="Node2D/FrenchKissBody" unique_id=819377334]
+position = Vector2(188.5024, -317.6784)
+scale = Vector2(0.9665285, 1.0326953)
+
+[node name="FrenchKissBody2" type="Sprite2D" parent="Node2D/FrenchKissBody/Node2D8" unique_id=1822852747]
+position = Vector2(-195.03033, 307.6207)
+scale = Vector2(1.0346307, 0.96833986)
+texture = ExtResource("9_fi54h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/FrenchKissBody/Node2D8/FrenchKissBody2" unique_id=991290250]
+libraries/ = SubResource("AnimationLibrary_2rc8v")
