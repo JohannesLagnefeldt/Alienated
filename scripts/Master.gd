@@ -10,10 +10,12 @@ var MASK_TEXTURES : Array[Texture2D] = [
 var current_masks : Array[int] = []
 var secret_masks : Array[int] = []
 var guess : Array[int] = []
+var masks_in_guess: int = 4;
 
 var log : Array[Array] = []
 
 func _ready() -> void:
+	current_masks = [1,2,3,4]
 	secret_masks = [1,2,3,4]
 	add_guess(2)
 	add_guess(2)

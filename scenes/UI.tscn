@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djlh8dpdhnjbd"]
 
-[ext_resource type="PackedScene" uid="uid://b3xqkba08wweq" path="res://scenes/mask.tscn" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://b4a5xnqlk6qg" path="res://scripts/mask_container.gd" id="1_ro3t7"]
 
 [node name="Control" type="Control" unique_id=838816338]
 layout_mode = 3
@@ -10,14 +10,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1019127586]
+[node name="MaskContainer" type="HBoxContainer" parent="." unique_id=1019127586]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="mask" parent="HBoxContainer" unique_id=1733299485 instance=ExtResource("1_dj8aq")]
-layout_mode = 2
-size_flags_horizontal = 3
+script = ExtResource("1_ro3t7")
