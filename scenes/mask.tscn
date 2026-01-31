@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b3xqkba08wweq"]
+
+[ext_resource type="Script" uid="uid://dfvnrl1kpwoys" path="res://scripts/control.gd" id="1_in0c2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_in0c2"]
+bg_color = Color(0.5978838, 0.5986588, 0.6148496, 1)
+
+[node name="mask" type="Panel" unique_id=1733299485]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_in0c2")
+script = ExtResource("1_in0c2")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
