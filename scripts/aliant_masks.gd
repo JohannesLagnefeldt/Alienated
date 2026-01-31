@@ -17,5 +17,6 @@ func _ready() -> void:
 		add_child(c)
 		var styleBox: StyleBoxTexture = StyleBoxTexture.new()
 		c.add_theme_stylebox_override("panel", styleBox)
+		print(Master.secret_masks[i])
 		styleBox.set("texture", Master.secret_masks[i].mask_texture)
 		input_masks.append(c)

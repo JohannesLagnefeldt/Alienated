@@ -15,12 +15,12 @@ enum CHIP {NONE, TOP, RIGHT, LEFT}
 func init(shape : SHAPE, horns_shape : HORNS, nbr_horns : int, chip_position : CHIP, nbr_chips : int, mask_texture : Texture2D) -> MaskResource:
 	var new_mask = MaskResource.new()
 	
-	self.shape = shape
-	self.horns_shape = horns_shape
-	self.nbr_horns = nbr_horns
-	self.chip_position = chip_position
-	self.nbr_chips = nbr_chips
-	self.mask_texture = mask_texture
+	new_mask.shape = shape
+	new_mask.horns_shape = horns_shape
+	new_mask.nbr_horns = nbr_horns
+	new_mask.chip_position = chip_position
+	new_mask.nbr_chips = nbr_chips
+	new_mask.mask_texture = mask_texture
 	
 	return new_mask
 
