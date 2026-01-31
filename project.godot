@@ -13,6 +13,7 @@ config_version=5
 config/name="Alienated"
 run/main_scene="uid://djlh8dpdhnjbd"
 config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
 
 [physics]
 
