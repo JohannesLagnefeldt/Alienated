@@ -21,8 +21,8 @@ buses/default_bus_layout="uid://bmlmyanfv2egt"
 
 [autoload]
 
-Master="*uid://chmqj0wfceh60"
 JsonReader="*uid://cdnfm20gjaesv"
+Master="*uid://chmqj0wfceh60"
 
 [physics]
 
