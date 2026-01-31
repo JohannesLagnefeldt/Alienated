@@ -49,31 +49,28 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
 
-[node name="Control" type="Control" parent="VBoxContainer" unique_id=163291753]
-custom_minimum_size = Vector2(0, 200)
+[node name="Control2" type="Control" parent="VBoxContainer" unique_id=1477257366]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.2
+size_flags_stretch_ratio = 0.4
 
-[node name="MaskContainer" type="HBoxContainer" parent="VBoxContainer/Control" unique_id=1019127586]
+[node name="MaskContainer" type="HBoxContainer" parent="VBoxContainer/Control2" unique_id=1019127586]
 clip_contents = true
-layout_mode = 0
-offset_left = 576.0
-offset_top = 100.0
-offset_right = 576.0
-offset_bottom = 100.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 script = ExtResource("1_ro3t7")
 
-[node name="Selector" type="HBoxContainer" parent="VBoxContainer/Control" unique_id=1126220242]
-layout_mode = 0
-offset_left = 576.0
-offset_top = 100.0
-offset_right = 576.0
-offset_bottom = 100.0
+[node name="Selector" type="HBoxContainer" parent="VBoxContainer/Control2" unique_id=1126220242]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
