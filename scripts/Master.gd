@@ -1,8 +1,13 @@
 extends Node
 
+var RNG : RandomNumberGenerator = RandomNumberGenerator.new()
 var MASK_TEXTURES : Array[Texture2D] = [
 	preload("res://assets/Placeholder oni mask blue.png"),
 	preload("res://assets/Placeholder oni mask Emerald.png"),
+	preload("res://assets/Placeholder oni mask Orange.png"),
+	preload("res://assets/Placeholder oni mask Orange.png"),
+	preload("res://assets/Placeholder oni mask Orange.png"),
+	preload("res://assets/Placeholder oni mask Orange.png"),
 	preload("res://assets/Placeholder oni mask Orange.png"),
 	preload("res://assets/Placeholder oni mask Red.png")
 ]
