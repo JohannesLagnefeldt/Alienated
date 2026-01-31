@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://djlh8dpdhnjbd"]
 
-[ext_resource type="PackedScene" uid="uid://b3xqkba08wweq" path="res://scenes/mask.tscn" id="1_dj8aq"]
 [ext_resource type="Script" uid="uid://b4a5xnqlk6qg" path="res://scripts/mask_container.gd" id="1_ro3t7"]
+[ext_resource type="PackedScene" uid="uid://gl24r28spem8" path="res://scenes/music.tscn" id="3_5en4g"]
+[ext_resource type="AudioStream" uid="uid://dogsabwo0xxms" path="res://assets/sfx/alienated_ui_ok.wav" id="3_ua6yw"]
 
 [node name="Control" type="Control" unique_id=838816338]
 layout_mode = 3
@@ -30,11 +31,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 script = ExtResource("1_ro3t7")
 
-[node name="mask" parent="VBoxContainer/MaskContainer" unique_id=1733299485 instance=ExtResource("1_dj8aq")]
-layout_mode = 2
+[node name="AudioToggleMask2" type="AudioStreamPlayer2D" parent="VBoxContainer/MaskContainer" unique_id=2088378167]
+stream = ExtResource("3_ua6yw")
 
-[node name="mask2" parent="VBoxContainer/MaskContainer" unique_id=714804626 instance=ExtResource("1_dj8aq")]
-layout_mode = 2
-
-[node name="mask3" parent="VBoxContainer/MaskContainer" unique_id=1523645816 instance=ExtResource("1_dj8aq")]
-layout_mode = 2
+[node name="Music" parent="." unique_id=565445926 instance=ExtResource("3_5en4g")]

@@ -4,6 +4,8 @@ var mouse_hovering: bool = false
 var styleBox: StyleBoxTexture = get_theme_stylebox("panel").duplicate()
 var index: int = 0
 
+@onready var audio_toggle_mask: AudioStreamPlayer2D = $AudioToggleMask
+
 func _ready() -> void:
 	add_theme_stylebox_override("panel", styleBox)
 	styleBox.set("texture", Master.MASK_TEXTURES[0])
@@ -20,7 +22,9 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.is_pressed():
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				index = (index + 1) % mask_len
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				audio_toggle_mask.play()
+			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				index = index - 1 if (index - 1) >= 0 else mask_len - 1
+				audio_toggle_mask.play()
 			styleBox.set("texture", Master.MASK_TEXTURES[index])
 			

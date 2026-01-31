@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfvnrl1kpwoys" path="res://scripts/mask.gd" id="1_in0c2"]
 [ext_resource type="Texture2D" uid="uid://bwhksg170gkya" path="res://assets/Placeholder oni mask blue.png" id="1_rv8xw"]
+[ext_resource type="AudioStream" uid="uid://01c7k881owlu" path="res://assets/sfx/alienated_ui_toggle.wav" id="3_xsism"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in0c2"]
 texture = ExtResource("1_rv8xw")
@@ -16,6 +17,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_in0c2")
 script = ExtResource("1_in0c2")
+
+[node name="AudioToggleMask" type="AudioStreamPlayer2D" parent="." unique_id=795700543]
+stream = ExtResource("3_xsism")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
