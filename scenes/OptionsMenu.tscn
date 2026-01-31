@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://bhfl7bxn0764c"]
+
+[ext_resource type="Script" uid="uid://c1623wy1ely81" path="res://scripts/options_menu.gd" id="1_dpnyk"]
+
+[node name="OptionsMenu" type="CanvasLayer" unique_id=1879402645]
+process_mode = 3
+script = ExtResource("1_dpnyk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=548958541]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.15686275)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1478926328]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1164194883]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="CenterContainer/PauseMenu" unique_id=119596007]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+current_tab = 0
+clip_tabs = false
+
+[node name="Sound" type="TabBar" parent="CenterContainer/PauseMenu/TabContainer" unique_id=653957363]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PauseMenu/TabContainer/Sound" unique_id=804042423]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="SFX" type="Label" parent="CenterContainer/PauseMenu/TabContainer/Sound/GridContainer" unique_id=1691722680]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "SFX"
+
+[node name="SFX Slider" type="HSlider" parent="CenterContainer/PauseMenu/TabContainer/Sound/GridContainer" unique_id=1796585816]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -12.0
+max_value = 0.0
+step = 0.5
+
+[node name="Music" type="Label" parent="CenterContainer/PauseMenu/TabContainer/Sound/GridContainer" unique_id=267491068]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Music"
+
+[node name="Music Slider" type="HSlider" parent="CenterContainer/PauseMenu/TabContainer/Sound/GridContainer" unique_id=497408945]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -12.0
+max_value = 0.0
+step = 0.5
+
+[node name="Visuals" type="TabBar" parent="CenterContainer/PauseMenu/TabContainer" unique_id=1272016158]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PauseMenu/TabContainer/Visuals" unique_id=389007687]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Fullscreen" type="Label" parent="CenterContainer/PauseMenu/TabContainer/Visuals/GridContainer" unique_id=800882452]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Fullscreen"
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="CenterContainer/PauseMenu/TabContainer/Visuals/GridContainer" unique_id=2048938236]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Gameplay" type="TabBar" parent="CenterContainer/PauseMenu/TabContainer" unique_id=1383883938]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PauseMenu/TabContainer/Gameplay" unique_id=224797572]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PauseMenu" unique_id=929623249]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CenterContainer/PauseMenu" unique_id=186413009]
+layout_mode = 2
+text = "Back"
+
+[connection signal="drag_ended" from="CenterContainer/PauseMenu/TabContainer/Sound/GridContainer/SFX Slider" to="." method="set_sfx_volume"]
+[connection signal="drag_ended" from="CenterContainer/PauseMenu/TabContainer/Sound/GridContainer/Music Slider" to="." method="set_music_volume"]
+[connection signal="toggled" from="CenterContainer/PauseMenu/TabContainer/Visuals/GridContainer/FullscreenCheckButton" to="." method="set_fullscreen"]
+[connection signal="pressed" from="CenterContainer/PauseMenu/Back" to="." method="go_back"]
