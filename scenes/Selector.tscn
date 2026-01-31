@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwpcrx6keybg1"]
 
-[ext_resource type="Script" uid="uid://bfxqgc522fycu" path="res://scripts/mask_show_selector.gd" id="1_y6aoi"]
+[ext_resource type="Script" path="res://scripts/mask_show_selector.gd" id="1_y6aoi"]
 
 [node name="Panel" type="Control" unique_id=1084564109]
 layout_mode = 3
@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 script = ExtResource("1_y6aoi")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=423853712]

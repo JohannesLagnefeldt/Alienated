@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b4a5xnqlk6qg" path="res://scripts/mask_container.gd" id="1_ro3t7"]
 [ext_resource type="Script" uid="uid://dpoi2s0pim4wy" path="res://scripts/mask_input_controller.gd" id="1_xpksx"]
-[ext_resource type="PackedScene" path="res://scenes/music.tscn" id="3_5en4g"]
+[ext_resource type="PackedScene" uid="uid://gl24r28spem8" path="res://scenes/music.tscn" id="3_5en4g"]
 [ext_resource type="AudioStream" uid="uid://dogsabwo0xxms" path="res://assets/sfx/alienated_ui_ok.wav" id="3_ua6yw"]
 [ext_resource type="Texture2D" uid="uid://nj644gt678po" path="res://assets/Placeholder Almost.png" id="4_3wlde"]
 [ext_resource type="Texture2D" uid="uid://bveeltxjps3ne" path="res://assets/Placeholder Good.png" id="5_xpksx"]
 [ext_resource type="Texture2D" uid="uid://dedd3q0mwdk1f" path="res://assets/Placeholder Bad.png" id="6_24e4x"]
 
-[node name="Control" type="Control" unique_id=838816338]
+[node name="UI" type="Control" unique_id=838816338]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Music" parent="." unique_id=565445926 instance=ExtResource("3_5en4g")]
 bus = &"Master"
