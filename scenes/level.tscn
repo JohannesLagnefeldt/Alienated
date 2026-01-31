@@ -12,3 +12,4 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=606695143]
 
 [node name="UI" parent="CanvasLayer" unique_id=838816338 instance=ExtResource("2_w7c3h")]
+scale = Vector2(0.87999904, 0.87999904)

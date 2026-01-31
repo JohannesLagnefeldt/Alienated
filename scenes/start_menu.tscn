@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cnsd05j181xbe"]
+
+[ext_resource type="Texture2D" uid="uid://dh4mo0pimf8l3" path="res://assets/PlaceHolder Menu Background.png" id="1_ouf4f"]
+[ext_resource type="Script" uid="uid://cyshjuatqgvvb" path="res://scripts/start_menu.gd" id="1_thu50"]
+
+[node name="StartMenu" type="Control" unique_id=282439887]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thu50")
+
+[node name="PlaceHolderMenuBackground" type="Sprite2D" parent="." unique_id=1094779566]
+texture = ExtResource("1_ouf4f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2004735886]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -106.0
+offset_right = 34.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1566046146]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Play"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=404724086]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Options"
+
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1069988943]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=336566454]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=743858965]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -57.5
+offset_right = 76.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="GridContainer" parent="VBoxContainer3" unique_id=807320867]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=825256359]
+layout_mode = 2
+text = "Music"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1296683987]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=295056737]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="CheckButton2" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1075242719]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=557339227]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="CheckButton3" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1727130418]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer3" unique_id=1148875928]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton3" to="." method="_on_check_button_3_toggled"]
+[connection signal="button_down" from="VBoxContainer3/Button" to="." method="_on_button_button_down"]
