@@ -17,18 +17,20 @@ func _ready() -> void:
 	current_masks = [0,1,2,3]
 	secret_masks = [0,1,2,3]
 
-func try_solve(guess : Array[int]) -> Vector2:
+func try_solve(guess : Array[int]) -> Array[int]:
 	print(guess)
 	var temp = secret_masks.duplicate()
-	var result : Vector2 = Vector2.ZERO
+	var result : Array[int]
 	for i : int in range(temp.size()):
 		if temp[i] == guess[i]:
 			temp[i] = -1
-			result.x += 1
+			result.append(2)
+		else:
+			result.append(0)
 	
 	for j : int in range(temp.size()):
 		if temp.has(guess[j]):
-			result.y += 1
+			result[j] = 1
 	
 	log.append([guess.duplicate(), result])
 	return result
