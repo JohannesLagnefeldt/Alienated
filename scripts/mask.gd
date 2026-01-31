@@ -1,11 +1,12 @@
 extends Panel
 
 var mouse_hovering: bool = false
-var styleBox: StyleBoxFlat = get_theme_stylebox("panel").duplicate()
+var styleBox: StyleBoxTexture = get_theme_stylebox("panel").duplicate()
 var index: int = 0
 
 func _ready() -> void:
 	add_theme_stylebox_override("panel", styleBox)
+	styleBox.set("texture", Master.MASK_TEXTURES[0])
 
 func _on_mouse_entered() -> void:
 	mouse_hovering = true

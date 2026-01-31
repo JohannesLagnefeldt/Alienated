@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b3xqkba08wweq"]
 
 [ext_resource type="Script" uid="uid://dfvnrl1kpwoys" path="res://scripts/mask.gd" id="1_in0c2"]
+[ext_resource type="Texture2D" uid="uid://bwhksg170gkya" path="res://assets/Placeholder oni mask blue.png" id="1_rv8xw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in0c2"]
+texture = ExtResource("1_rv8xw")
 
 [node name="mask" type="Panel" unique_id=1733299485]
 anchors_preset = 15
