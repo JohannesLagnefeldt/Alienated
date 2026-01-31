@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dh4mo0pimf8l3" path="res://assets/PlaceHolder Menu Background.png" id="1_ouf4f"]
 [ext_resource type="Script" uid="uid://cyshjuatqgvvb" path="res://scripts/start_menu.gd" id="1_thu50"]
+[ext_resource type="AudioStream" uid="uid://dogsabwo0xxms" path="res://assets/sfx/alienated_ui_ok.wav" id="3_m7x51"]
 
 [node name="StartMenu" type="Control" unique_id=282439887]
 layout_mode = 3
@@ -95,6 +96,10 @@ layout_mode = 2
 [node name="Button" type="Button" parent="VBoxContainer3" unique_id=1148875928]
 layout_mode = 2
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1812419162]
+stream = ExtResource("3_m7x51")
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
