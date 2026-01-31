@@ -15,7 +15,7 @@ var log : Array[Array] = []
 
 func _ready() -> void:
 	current_masks = [0,1,2,3]
-	secret_masks = [0,1,2,3]
+	secret_masks = [0,1,2,3,3]
 
 func try_solve(guess : Array[int]) -> Array[int]:
 	print(guess)
