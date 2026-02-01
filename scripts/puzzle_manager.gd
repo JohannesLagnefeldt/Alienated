@@ -9,7 +9,8 @@ enum PUZZLE_FUNC {PULL_FUNC, VALIDATE_FUNC, REWARD_MASK_INDEX}
 	[pull_three_no_square, more_edges, 4],
 	[pull_four, horn_sum_to_two, 5],
 	[pull_four_with_horns, same_horn_diff_shape, 6],
-	[pull_three_with_horns, majority_horn_shape, 7]
+	[pull_three_with_horns, majority_horn_shape, 7],
+	[pull_four_with_chip, same_dir_chip, 8]
 ]
 enum PUZZLE_RESULT {NONE, EXISTS, MATCH}
 
@@ -24,6 +25,9 @@ func filter_square(mask : MaskResource):
 
 func filter_no_horn(mask : MaskResource):
 	return mask.horns_shape == MaskResource.HORNS.NONE
+
+func filter_no_chip(mask : MaskResource):
+	return mask.horns_shape == MaskResource.CHIP.NONE
 
 ########################
 ### Secret Selectors ###
@@ -58,6 +62,10 @@ func pull_four_with_horns(mask_pool : Array[MaskResource]):
 # Puzzle 5
 func pull_three_with_horns(mask_pool : Array[MaskResource]):
 	return pull_random(3, mask_pool, filter_no_horn)
+	
+# Puzzle 6
+func pull_four_with_chip(mask_pool : Array[MaskResource]):
+	return pull_random(4, mask_pool, filter_no_chip)
 
 ########################
 ###    Validators    ###
@@ -175,5 +183,26 @@ func majority_horn_shape(guess : Array[MaskResource], secret : Array[MaskResourc
 			result.append(PUZZLE_RESULT.MATCH)
 		else:
 			result.append(PUZZLE_RESULT.NONE)
+	
+	return result
+
+# Puzzle 6
+func single_same_dir_chip(guess_mask : MaskResource, secret_mask : MaskResource):
+	return guess_mask.chip_position == secret_mask.chip_position and not guess_mask.equals(secret_mask)
+func same_dir_chip(guess : Array[MaskResource], secret : Array[MaskResource]):
+	var result : Array[PUZZLE_RESULT] = []
+	var l = len(guess)
+	for m in l:
+		if single_same_dir_chip(guess[m], secret[m]):
+			result.append(PUZZLE_RESULT.MATCH)
+		else:
+			var found = false
+			for i in l:
+				if single_same_dir_chip(guess[i], secret[i]):
+					found = true
+			if found:
+				result.append(PUZZLE_RESULT.EXISTS)
+			else:
+				result.append(PUZZLE_RESULT.NONE)
 	
 	return result
