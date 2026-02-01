@@ -28,7 +28,6 @@ Signals="*uid://kkd4axbg48bo"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [input]
 

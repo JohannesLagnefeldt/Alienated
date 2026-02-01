@@ -2,15 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://b7c55uysspaw6" path="res://assets/ui/Device Background.png" id="1_biq1s"]
 [ext_resource type="Texture2D" uid="uid://dml113rtqm24n" path="res://assets/ui/Screen.png" id="2_bknd1"]
-[ext_resource type="PackedScene" uid="uid://b3xqkba08wweq" path="res://scenes/mask.tscn" id="2_cfnno"]
 [ext_resource type="PackedScene" uid="uid://spkdqn4axwsi" path="res://scenes/ui/mask_select.tscn" id="3_cfnno"]
 [ext_resource type="Texture2D" uid="uid://bgnbj2pheg4qd" path="res://assets/ui/Info Button.png" id="4_46f4y"]
+[ext_resource type="Script" uid="uid://b2xvom0fj7o72" path="res://scenes/ui/info_button.gd" id="4_bknd1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5xqe"]
 texture = ExtResource("1_biq1s")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuab1"]
 texture = ExtResource("2_bknd1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bknd1"]
+bg_color = Color(0, 0.15666667, 0.2, 0.9490196)
 
 [node name="RootContainer" type="Control" unique_id=118315646]
 layout_mode = 3
@@ -85,15 +88,6 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="mask4" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer/CurrPromptContainer" unique_id=1733299485 instance=ExtResource("2_cfnno")]
-layout_mode = 2
-
-[node name="mask5" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer/CurrPromptContainer" unique_id=1512275373 instance=ExtResource("2_cfnno")]
-layout_mode = 2
-
-[node name="mask6" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer/CurrPromptContainer" unique_id=1969132897 instance=ExtResource("2_cfnno")]
-layout_mode = 2
-
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=266227670]
 layout_mode = 2
 size_flags_vertical = 3
@@ -104,14 +98,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.05
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1607040007]
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1607040007 node_paths=PackedStringArray("info_popup")]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.5
+size_flags_stretch_ratio = 0.25
 texture_normal = ExtResource("4_46f4y")
 ignore_texture_size = true
-stretch_mode = 4
+stretch_mode = 5
+script = ExtResource("4_bknd1")
+info_popup = NodePath("../../../../../../../Info Popup")
+
+[node name="Spacer2" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=782747463]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
 
 [node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=1361348069]
 layout_mode = 2
@@ -145,30 +145,37 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 
-[node name="Info Popup" type="Panel" parent="HBoxContainer/Panel" unique_id=1399142351]
+[node name="AlienSpacer" type="Control" parent="HBoxContainer" unique_id=744645077]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="Info Popup" type="Panel" parent="." unique_id=1399142351]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -229.0
-offset_right = 204.0
-offset_bottom = 221.0
+anchors_preset = -1
+anchor_left = 0.014756944
+anchor_top = 0.020061728
+anchor_right = 1.0147569
+anchor_bottom = 1.0200617
+offset_left = 359.0
+offset_top = 87.0
+offset_right = -313.0
+offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bknd1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/Info Popup" unique_id=1882837192]
+[node name="VBoxContainer" type="VBoxContainer" parent="Info Popup" unique_id=1882837192]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/Panel/Info Popup/VBoxContainer" unique_id=1972310987]
+[node name="Label" type="Label" parent="Info Popup/VBoxContainer" unique_id=1972310987]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.15
@@ -177,10 +184,11 @@ text = "How to Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="HBoxContainer/Panel/Info Popup/VBoxContainer" unique_id=142470472]
+[node name="Label2" type="Label" parent="Info Popup/VBoxContainer" unique_id=142470472]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
+theme_override_font_sizes/font_size = 18
 text = "Communicate with the aliens using masks and
 make friends on this unfamiliar planet!
 
@@ -197,7 +205,14 @@ Answer correctly 3 times in a row to progress!
 - Red: The mask is not part of the response"
 horizontal_alignment = 1
 
-[node name="AlienSpacer" type="Control" parent="HBoxContainer" unique_id=744645077]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.4
+[node name="Button" type="Button" parent="Info Popup" unique_id=359748339]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 10.0
+offset_right = 467.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 26
+text = "X"
+
+[connection signal="pressed" from="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" to="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="Info Popup/Button" to="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" method="_on_button_pressed"]
