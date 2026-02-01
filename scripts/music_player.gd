@@ -4,7 +4,7 @@ extends Node
 @export var interact_level = 1
 @export var tarnsition_strength : float = 2.2
 ## 0 for no music. 1 for menu. 2 for party. 3 for interact
-var current_music := 3
+var current_music := 1
 
 @onready var party: Node = $Party
 @onready var party_pads: AudioStreamPlayer = $Party/PartyPads
@@ -45,11 +45,11 @@ func _process(delta: float) -> void:
 			for i in interact.get_children():
 				i.volume_linear = 0
 		1:
-			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 1, delta * tarnsition_strength)
+			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 1.0, delta * tarnsition_strength)
 			for i in party.get_children():
-				i.volume_linear = lerp(i.volume_linear, 0, delta * tarnsition_strength)
+				i.volume_linear = lerp(i.volume_linear, 0.0, delta * tarnsition_strength)
 			for i in interact.get_children():
-				i.volume_linear = lerp(i.volume_linear, 0, delta * tarnsition_strength)
+				i.volume_linear = lerp(i.volume_linear, 0.0, delta * tarnsition_strength)
 		2:
 			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 0, delta * tarnsition_strength)
 			for i in interact.get_children():
