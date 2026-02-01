@@ -45,3 +45,10 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 expand_mode = 2
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1357939737]
+layout_mode = 0
+size_flags_horizontal = 8
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 5

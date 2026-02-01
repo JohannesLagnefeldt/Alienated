@@ -44,7 +44,7 @@ var secret_masks : Array[MaskResource]
 var masks_in_guess: int = 4
 var current_puzzle : int = 0
 var puzzle_manager : PuzzleManager = PuzzleManager.new()
-var puzzle_amount : int = 3
+var puzzle_amount : int = 7
 var correct_guesses : int = 0
 
 var log : Array[Array] = []
@@ -74,6 +74,8 @@ func try_solve(guess : Array[int]) -> Array[int]:
 
 func next_level():
 	current_puzzle += 1
+	if current_puzzle % 3 == 0:
+		Signals.emit_signal("alien_change")
 	correct_guesses = 0
 	if (current_puzzle == puzzle_amount):
 		Signals.emit_signal("game_win")
