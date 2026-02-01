@@ -5,8 +5,16 @@ var checking_masks: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pda_ui.clear_log()
 	pda_ui.set_mask_amount(Master.secret_masks.size())
+	pda_ui.add_log(getTextures(Master.secret_masks))
 
+	
+func getTextures(mask_resources: Array[MaskResource]):
+	var mask_textures : Array[Texture2D] = []
+	for mask in mask_resources:
+		mask_textures.append(mask.mask_texture)
+	return mask_textures
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_action_pressed("ui_accept") and not checking_masks:
@@ -22,9 +30,12 @@ func _input(event: InputEvent) -> void:
 			await get_tree().create_timer(1).timeout
 			#mask_container.selectors[i].toggle_on(false)
 		if answer_correct:
+			pda_ui.set_light(Master.correct_guesses, true)
 			Master.correct_guesses += 1
 		else:
 			Master.correct_guesses = 0
+			pda_ui.turn_off_lights()
+			pda_ui.set_light(Master.correct_guesses, true)
 		checking_masks = false
 		print("Correct Guesses: " + str(Master.correct_guesses))
 		
@@ -33,5 +44,6 @@ func _input(event: InputEvent) -> void:
 		Signals.emit_signal("point_change", Master.correct_guesses)
 		if Master.correct_guesses == 3:
 			Signals.emit_signal("level_win")
+			pda_ui.turn_off_lights()
 			Master.next_level()
 			Signals.emit_signal("alien_change")
