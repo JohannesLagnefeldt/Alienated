@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://bmlmyanfv2egt"
 JsonReader="*uid://cdnfm20gjaesv"
 Master="*uid://chmqj0wfceh60"
 Signals="*uid://kkd4axbg48bo"
+Music="*uid://xpi130jvdfmg"
 
 [display]
 

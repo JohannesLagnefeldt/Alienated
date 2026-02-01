@@ -46,10 +46,12 @@ func clear_last_log():
 	if (len(log_container.get_children()) >= 4):
 		log_container.remove_child(log_container.get_children()[0])
 
-func evaluate_log(mask_results : Array[PuzzleManager.PUZZLE_RESULT]):
+func evaluate_log(mask_results : Array[PuzzleManager.PUZZLE_RESULT], guesses : Array[Texture2D]):
 	var last_log = log_container.get_child(log_container.get_child_count() - 1)
 	for c in last_log.get_child_count():
-		last_log.get_child(c).set_react(mask_results[c])
+		var child = last_log.get_child(c)
+		child.set_react(mask_results[c])
+		child.set_guess(guesses[c])
 
 func set_light(index : int, state : bool):
 	var light_to_update = light_container.get_child(index)

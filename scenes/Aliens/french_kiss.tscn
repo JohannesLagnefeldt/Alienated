@@ -1353,7 +1353,7 @@ root_node = NodePath("../../AnimationPlayer")
 libraries/ = SubResource("AnimationLibrary_jv8df")
 
 [node name="ReactionSprite" parent="." unique_id=921331486 instance=ExtResource("12_4x4r2")]
-position = Vector2(975.9999, -526)
+position = Vector2(600, -526)
 rotation = 0.18258801
 scale = Vector2(0.28014243, 0.25835997)
 skew = -0.07047212

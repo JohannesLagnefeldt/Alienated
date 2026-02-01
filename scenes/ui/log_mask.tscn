@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cuyyrd5ako25e" path="res://assets/masks/Mask 0.png" id="1_wipc6"]
 [ext_resource type="Script" uid="uid://b2w25hkt5ygmi" path="res://scenes/ui/log_mask.gd" id="2_vlnpx"]
-[ext_resource type="Texture2D" uid="uid://7ss31jno877o" path="res://assets/masks/Mask 8.png" id="3_vlnpx"]
 
 [node name="LogMask" type="TextureRect" unique_id=1038083316 node_paths=PackedStringArray("react_texture_rect", "guess_texture_rect")]
 anchors_preset = 15
@@ -44,6 +43,5 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("3_vlnpx")
 expand_mode = 2
 stretch_mode = 5
