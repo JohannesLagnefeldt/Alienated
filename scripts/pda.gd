@@ -52,3 +52,7 @@ func set_light(index : int, state : bool):
 		light_to_update.texture = light_correct
 	else:
 		light_to_update.texture = light_yellow
+		
+func turn_off_lights():
+	for i in 3:
+		set_light(i, false)

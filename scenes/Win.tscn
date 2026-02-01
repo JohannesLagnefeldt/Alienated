@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dwyj5jxgxwmtf"]
+
+[ext_resource type="Texture2D" uid="uid://iwcjw6gnp71h" path="res://assets/sprites/wIN.png" id="2_24ius"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pnk8a"]
+load_path = "res://.godot/imported/background.png-dde469fb1f19281f3784b52d4bea96cd.ctex"
+
+[node name="Win" type="Control" unique_id=2002185053]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=383706938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_pnk8a")
+expand_mode = 2
+
+[node name="WIn" type="Sprite2D" parent="." unique_id=124828722]
+position = Vector2(595, 238)
+texture = ExtResource("2_24ius")
