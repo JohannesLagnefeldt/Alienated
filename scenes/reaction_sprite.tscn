@@ -242,3 +242,4 @@ frame_progress = 0.6436062
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/AnimatedSprite2D" unique_id=1025183299]
 libraries/ = SubResource("AnimationLibrary_363r5")
+speed_scale = 1.308

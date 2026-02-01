@@ -933,7 +933,7 @@ _data = {
 &"StarDiamond": SubResource("Animation_7vu8m")
 }
 
-[node name="Node" type="Node2D" unique_id=2024355123]
+[node name="Node2" type="Node2D" unique_id=2024355123]
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1365215887]
 scale = Vector2(0.3, 0.3)

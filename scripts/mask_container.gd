@@ -10,6 +10,8 @@ var selectors := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	
 	#for n in self.get_children():
 	#	remove_child(n)
 	for i in Master.secret_masks.size():

@@ -414,7 +414,7 @@ _data = {
 &"RevealMask": SubResource("Animation_14i6v")
 }
 
-[node name="Node" type="Node2D" unique_id=2108504642]
+[node name="GravityAlien" type="Node2D" unique_id=2108504642]
 
 [node name="BodyHolder" type="Node2D" parent="." unique_id=2081698610]
 position = Vector2(0, 734)
