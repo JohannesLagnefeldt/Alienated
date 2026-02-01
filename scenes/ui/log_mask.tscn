@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cuyyrd5ako25e" path="res://assets/masks/Mask 0.png" id="1_wipc6"]
 [ext_resource type="Script" uid="uid://b2w25hkt5ygmi" path="res://scenes/ui/log_mask.gd" id="2_vlnpx"]
+[ext_resource type="Texture2D" uid="uid://7ss31jno877o" path="res://assets/masks/Mask 8.png" id="3_vlnpx"]
 
-[node name="LogMask" type="TextureRect" unique_id=1038083316 node_paths=PackedStringArray("react_texture_rect")]
+[node name="LogMask" type="TextureRect" unique_id=1038083316 node_paths=PackedStringArray("react_texture_rect", "guess_texture_rect")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,6 +17,7 @@ expand_mode = 2
 stretch_mode = 5
 script = ExtResource("2_vlnpx")
 react_texture_rect = NodePath("VBoxContainer/TextureRect")
+guess_texture_rect = NodePath("VBoxContainer/TextureRect2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1119415424]
 layout_mode = 1
@@ -35,3 +37,13 @@ stretch_mode = 5
 [node name="Control" type="Control" parent="VBoxContainer" unique_id=1746117829]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer" unique_id=2106223595]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("3_vlnpx")
+expand_mode = 2
+stretch_mode = 5
