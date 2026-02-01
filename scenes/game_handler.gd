@@ -45,8 +45,9 @@ func _input(event: InputEvent) -> void:
 		Signals.emit_signal("update_masks")
 		Signals.emit_signal("point_change", Master.correct_guesses)
 		if Master.correct_guesses == 3:
+			pda_ui.turn_off_lights()
 			pda_ui.clear_log()
 			Signals.emit_signal("level_win")
-			pda_ui.turn_off_lights()
 			Master.next_level()
 			Signals.emit_signal("alien_change")
+			pda_ui.add_log(getTextures(Master.secret_masks))
