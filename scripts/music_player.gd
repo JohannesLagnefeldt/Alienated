@@ -59,8 +59,8 @@ func _process(delta: float) -> void:
 			party_bass.volume_linear = lerp(party_bass.volume_linear, clamp(party_level - 1, 0, 1), delta * tarnsition_strength)
 			party_arp.volume_linear = lerp(party_arp.volume_linear, clamp(party_level - 2, 0, 1), delta * tarnsition_strength)
 		3:
-			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 0, delta * tarnsition_strength)
+			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 0.0, delta * tarnsition_strength)
 			for i in party.get_children():
-				i.volume_linear = lerp(i.volume_linear, 0, delta * tarnsition_strength)
+				i.volume_linear = lerp(i.volume_linear, 0.0, delta * tarnsition_strength)
 			for i in interact.get_children():
-				i.volume_linear = lerp(i.volume_linear, 1, delta * tarnsition_strength)
+				i.volume_linear = lerp(i.volume_linear, 1.0, delta * tarnsition_strength)
