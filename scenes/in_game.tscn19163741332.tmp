@@ -196,10 +196,5 @@ autoplay = &"EyeEnter"
 wait_time = 2.0
 one_shot = true
 
-[node name="Timer2" type="Timer" parent="Characters" unique_id=123567535]
-wait_time = 2.0
-one_shot = true
-
 [connection signal="animation_finished" from="Characters/CharacterChanger" to="Characters" method="_on_character_changer_animation_finished"]
 [connection signal="timeout" from="Characters/Timer" to="Characters" method="_on_timer_timeout"]
-[connection signal="timeout" from="Characters/Timer2" to="Characters" method="_on_timer_2_timeout"]
