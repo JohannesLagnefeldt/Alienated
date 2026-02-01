@@ -127,8 +127,6 @@ func more_edges(guess : Array[MaskResource], secret : Array[MaskResource]):
 
 # Puzzle 3
 func single_horn_sum_to_two(guess_mask : MaskResource, secret_mask : MaskResource):
-	if guess_mask.horns_shape != secret_mask.horns_shape:
-		return false
 	return (guess_mask.nbr_horns + secret_mask.nbr_horns) == 2 
 func horn_sum_to_two(guess : Array[MaskResource], secret : Array[MaskResource]):
 	var result : Array[PUZZLE_RESULT] = []
