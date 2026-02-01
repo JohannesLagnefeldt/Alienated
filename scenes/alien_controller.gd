@@ -13,7 +13,7 @@ func _ready() -> void:
 	timer_2.start()
 
 func change_alien():
-	state += 1;
+	state += 1
 	match state:
 		1:
 			character_changer.play_backwards("MercuryEnter")
@@ -22,8 +22,6 @@ func change_alien():
 			character_changer.play_backwards("EyeEnter")
 			timer.start()
 
-		
-				
 
 func _on_timer_timeout() -> void:
 	match state:
