@@ -486,7 +486,7 @@ texture = ExtResource("5_x0csc")
 libraries/ = SubResource("AnimationLibrary_m3rlv")
 
 [node name="ReactionSprite" parent="BodyHolder" unique_id=921331486 instance=ExtResource("6_x0csc")]
-position = Vector2(300.31, -1037)
+position = Vector2(155, -1101)
 rotation = 0.16483295
 scale = Vector2(0.26379636, 0.26379636)
 

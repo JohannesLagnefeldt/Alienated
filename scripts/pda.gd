@@ -55,6 +55,7 @@ func evaluate_log(mask_results : Array[PuzzleManager.PUZZLE_RESULT], guesses : A
 
 func set_light(index : int, state : bool):
 	var light_to_update = light_container.get_child(index)
+	print("update light " + str(index) +" + " + ("on" if state else "false"))
 	if state:
 		light_to_update.texture = light_correct
 	else:
