@@ -91,4 +91,4 @@ func _on_credits_back_pressed() -> void:
 	credits_menu.visible = false
 
 func switch_scene():
-	get_tree().change_scene_to_file("res://scenes/UI.tscn")
+	get_tree().change_scene_to_file("res://scenes/in_game.tscn")

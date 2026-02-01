@@ -21,6 +21,7 @@ func _input(event: InputEvent) -> void:
 		checking_masks = true
 		var input_array: Array[int] = pda_ui.get_player_guess()
 		var answer = Master.try_solve(input_array)
+		pda_ui.evaluate_log(answer)
 		var answer_correct : bool = true
 		for i in range(answer.size()):
 			#mask_container.selectors[i].toggle_on(true)
@@ -38,8 +39,9 @@ func _input(event: InputEvent) -> void:
 			pda_ui.set_light(Master.correct_guesses, true)
 		checking_masks = false
 		print("Correct Guesses: " + str(Master.correct_guesses))
-		
 		Master.generate_masks()
+		Signals.emit_signal("show_masks")
+		pda_ui.add_log(getTextures(Master.secret_masks))
 		Signals.emit_signal("update_masks")
 		Signals.emit_signal("point_change", Master.correct_guesses)
 		if Master.correct_guesses == 3:
