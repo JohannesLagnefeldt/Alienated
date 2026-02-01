@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cpsb6neq7p57a"]
+[gd_scene format=3 uid="uid://bio6p7fma1yaq"]
 
 [ext_resource type="PackedScene" uid="uid://cehdu7qfnj4ti" path="res://scenes/ui/pda.tscn" id="1_7nptk"]
 [ext_resource type="Script" uid="uid://q2vh2a70nwt3" path="res://scenes/game_handler.gd" id="1_or4b6"]
@@ -19,7 +19,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(992, -0.25, 0, 0.5, 0, 345, -1, 0, 0, 0),
+"points": PackedFloat32Array(992, -0.25, 0, 0.5, 0, 302.455, -0.33333334, 114.92418, 0, 0),
 "times": PackedFloat32Array(0, 2)
 }
 tracks/1/type = "bezier"
@@ -182,7 +182,7 @@ position = Vector2(1080, -32)
 
 [node name="FrenchKiss" parent="Characters" unique_id=805710949 instance=ExtResource("3_cela1")]
 position = Vector2(992, 146)
-scale = Vector2(0.31436068, 0.31436068)
+scale = Vector2(0.279, 0.279)
 
 [node name="Gravity" parent="Characters" unique_id=2108504642 instance=ExtResource("4_or4b6")]
 position = Vector2(1144, 141)

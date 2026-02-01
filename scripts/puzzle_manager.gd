@@ -8,7 +8,8 @@ enum PUZZLE_FUNC {PULL_FUNC, VALIDATE_FUNC, REWARD_MASK_INDEX}
 	[pull_three, match_reverse, 3],
 	[pull_three_no_square, more_edges, 4],
 	[pull_four, horn_sum_to_two, 5],
-	[pull_four_with_horns, same_horn_diff_shape, 6]
+	[pull_four_with_horns, same_horn_diff_shape, 6],
+	[pull_three_with_horns, majority_horn_shape, 7]
 ]
 enum PUZZLE_RESULT {NONE, EXISTS, MATCH}
 
@@ -53,6 +54,10 @@ func pull_four(mask_pool : Array[MaskResource]):
 # Puzzle 4
 func pull_four_with_horns(mask_pool : Array[MaskResource]):
 	return pull_random(4, mask_pool, filter_no_horn)
+	
+# Puzzle 5
+func pull_three_with_horns(mask_pool : Array[MaskResource]):
+	return pull_random(3, mask_pool, filter_no_horn)
 
 ########################
 ###    Validators    ###
@@ -113,9 +118,9 @@ func single_horn_sum_to_two(guess_mask : MaskResource, secret_mask : MaskResourc
 	return (guess_mask.nbr_horns + secret_mask.nbr_horns) == 2 
 func horn_sum_to_two(guess : Array[MaskResource], secret : Array[MaskResource]):
 	var result : Array[PUZZLE_RESULT] = []
-	var l = len(guess)
+	var l = len(guess) - 1
 	for m in l:
-		if single_horn_sum_to_two(guess[m], secret[l]):
+		if single_horn_sum_to_two(guess[m], secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)
 		else:
 			var found = false
@@ -134,9 +139,9 @@ func single_same_horn_diff_shape(guess_mask : MaskResource, secret_mask : MaskRe
 	return guess_mask.horns_shape == secret_mask.horns_shape and guess_mask.shape != secret_mask.shape
 func same_horn_diff_shape(guess : Array[MaskResource], secret : Array[MaskResource]):
 	var result : Array[PUZZLE_RESULT] = []
-	var l = len(guess)
+	var l = len(guess) - 1
 	for m in l:
-		if single_same_horn_diff_shape(guess[m], secret[l]):
+		if single_same_horn_diff_shape(guess[m], secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)
 		else:
 			var found = false
@@ -147,5 +152,28 @@ func same_horn_diff_shape(guess : Array[MaskResource], secret : Array[MaskResour
 				result.append(PUZZLE_RESULT.EXISTS)
 			else:
 				result.append(PUZZLE_RESULT.NONE)
+	
+	return result
+
+# Puzzle 5
+func majority_horn_shape(guess : Array[MaskResource], secret : Array[MaskResource]):
+	var result : Array[PUZZLE_RESULT] = []
+	var l = len(guess)
+	var stright_count = 0
+	var curved_count = 0
+	for m in l:
+		if secret[m].horns_shape == MaskResource.HORNS.STRAIGHT:
+			stright_count += 1
+		else:
+			curved_count += 1
+	
+	var horn_shape = MaskResource.HORNS.STRAIGHT
+	if curved_count > stright_count:
+		horn_shape = MaskResource.HORNS.BENT
+	for m in l:
+		if guess[m].horns_shape == horn_shape:
+			result.append(PUZZLE_RESULT.MATCH)
+		else:
+			result.append(PUZZLE_RESULT.NONE)
 	
 	return result

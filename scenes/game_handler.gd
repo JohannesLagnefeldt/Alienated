@@ -9,6 +9,11 @@ func _ready() -> void:
 	pda_ui.set_mask_amount(Master.secret_masks.size())
 	pda_ui.add_log(getTextures(Master.secret_masks))
 
+func getTexturesFromIndexes(mask_resources: Array[int]):
+	var mask_textures : Array[Texture2D] = []
+	for mask in mask_resources:
+		mask_textures.append(Master.MASK_TEXTURES[mask])
+	return mask_textures
 	
 func getTextures(mask_resources: Array[MaskResource]):
 	var mask_textures : Array[Texture2D] = []
@@ -21,7 +26,7 @@ func _input(event: InputEvent) -> void:
 		checking_masks = true
 		var input_array: Array[int] = pda_ui.get_player_guess()
 		var answer = Master.try_solve(input_array)
-		pda_ui.evaluate_log(answer)
+		pda_ui.evaluate_log(answer, getTexturesFromIndexes(input_array))
 		var answer_correct : bool = true
 		for i in range(answer.size()):
 			#mask_container.selectors[i].toggle_on(true)
@@ -40,7 +45,7 @@ func _input(event: InputEvent) -> void:
 		checking_masks = false
 		print("Correct Guesses: " + str(Master.correct_guesses))
 		Master.generate_masks()
-		Signals.emit_signal("show_masks")
+		
 		pda_ui.add_log(getTextures(Master.secret_masks))
 		Signals.emit_signal("update_masks")
 		Signals.emit_signal("point_change", Master.correct_guesses)
@@ -49,5 +54,8 @@ func _input(event: InputEvent) -> void:
 			pda_ui.clear_log()
 			Signals.emit_signal("level_win")
 			Master.next_level()
+			pda_ui.set_mask_amount(len(Master.secret_masks))
 			Signals.emit_signal("alien_change")
 			pda_ui.add_log(getTextures(Master.secret_masks))
+		else:
+			Signals.emit_signal("show_masks")
