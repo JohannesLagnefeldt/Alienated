@@ -93,4 +93,4 @@ func _on_credits_back_pressed() -> void:
 
 func switch_scene():
 	Music.play_interact()
-	get_tree().change_scene_to_file("res://scenes/in_game.tscn")
+	get_tree().change_scene_to_file("res://scripts/transition.gd")

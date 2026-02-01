@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://knq4a6m8s4gx"]
+
+[ext_resource type="Script" uid="uid://oawatsa304u6" path="res://scripts/transition.gd" id="1_fyjtc"]
+[ext_resource type="Texture2D" uid="uid://ctd24g0gx2c7x" path="res://assets/sprites/backgroundzoomedout.png" id="2_1m0lo"]
+
+[node name="Transition" type="Node2D" unique_id=1398355169]
+script = ExtResource("1_fyjtc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1116100416]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=497472025]
+position = Vector2(-2.000023, 1.4999962)
+scale = Vector2(0.52248204, 0.40227818)
+texture = ExtResource("2_1m0lo")
