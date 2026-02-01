@@ -67,20 +67,24 @@ func _on_button_button_down() -> void:
 	options_menu.visible = false
 
 func _on_play_mouse_entered() -> void:
-	var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu crsh hover.png")
-	player_space_ship.texture = new_texture
+	if can_press:
+		var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu crsh hover.png")
+		player_space_ship.texture = new_texture
 
 func _on_play_mouse_exited() -> void:
-	var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu.png")
-	player_space_ship.texture = new_texture
+	if can_press:
+		var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu.png")
+		player_space_ship.texture = new_texture
 
 func _on_options_mouse_entered() -> void:
-	var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu option hover.png")
-	player_space_ship.texture = new_texture
+	if can_press:
+		var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu option hover.png")
+		player_space_ship.texture = new_texture
 
 func _on_options_mouse_exited() -> void:
-	var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu.png")
-	player_space_ship.texture = new_texture
+	if can_press:
+		var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu.png")
+		player_space_ship.texture = new_texture
 
 func _on_credits_back_pressed() -> void:
 	audio_stream_player.play()

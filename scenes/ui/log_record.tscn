@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b7nmn5qlydc7l"]
+
+[ext_resource type="PackedScene" uid="uid://cg4tavhp3wbcr" path="res://scenes/ui/log_mask.tscn" id="1_ipo8k"]
+
+[node name="LogRecord" type="VBoxContainer" unique_id=1945046521]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LogMask" parent="." unique_id=1038083316 instance=ExtResource("1_ipo8k")]
+layout_mode = 2
+
+[node name="LogMask2" parent="." unique_id=1819574968 instance=ExtResource("1_ipo8k")]
+layout_mode = 2
+
+[node name="LogMask3" parent="." unique_id=713697050 instance=ExtResource("1_ipo8k")]
+layout_mode = 2

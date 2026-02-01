@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://spkdqn4axwsi" path="res://scenes/ui/mask_select.tscn" id="3_cfnno"]
 [ext_resource type="Texture2D" uid="uid://bgnbj2pheg4qd" path="res://assets/ui/Info Button.png" id="4_46f4y"]
 [ext_resource type="Script" uid="uid://b2xvom0fj7o72" path="res://scripts/info_button.gd" id="4_bknd1"]
+[ext_resource type="PackedScene" uid="uid://b7nmn5qlydc7l" path="res://scenes/ui/log_record.tscn" id="5_u8oa4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5xqe"]
 texture = ExtResource("1_biq1s")
@@ -18,7 +19,7 @@ texture = ExtResource("2_bknd1")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bknd1"]
 bg_color = Color(0, 0.15666667, 0.2, 0.9490196)
 
-[node name="RootContainer" type="Control" unique_id=118315646 node_paths=PackedStringArray("guess_container")]
+[node name="RootContainer" type="Control" unique_id=118315646 node_paths=PackedStringArray("guess_container", "log_container", "light_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +28,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_78e16")
 guess_container = NodePath("PDAContainer/PDA/PDAContainer/HBoxContainer2/GuessContainer")
+log_container = NodePath("PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer/SceenContainer/LogContainer")
+light_container = NodePath("PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer")
 
 [node name="PDAContainer" type="HBoxContainer" parent="." unique_id=354880088]
 layout_mode = 1
@@ -131,32 +134,52 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.9
 theme_override_styles/panel = SubResource("StyleBoxTexture_yuab1")
 
-[node name="SceenContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen" unique_id=1204176370]
+[node name="VBoxContainer" type="VBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen" unique_id=1325502555]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.8
 
-[node name="LogContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=286453935]
+[node name="Control2" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer" unique_id=573966697]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.8
+size_flags_stretch_ratio = 0.1
 
-[node name="CurrPromptContainer" type="VBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=2025322342]
+[node name="SceenContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer" unique_id=1204176370]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.25
+size_flags_stretch_ratio = 1.5
 
-[node name="Control" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=877334098]
+[node name="LogContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer/SceenContainer" unique_id=286453935]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+alignment = 2
+
+[node name="LogRecord" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer/SceenContainer/LogContainer" unique_id=1945046521 instance=ExtResource("5_u8oa4")]
+layout_mode = 2
+
+[node name="LogRecord2" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer/SceenContainer/LogContainer" unique_id=299049858 instance=ExtResource("5_u8oa4")]
+layout_mode = 2
+
+[node name="LogRecord3" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer/SceenContainer/LogContainer" unique_id=1704006839 instance=ExtResource("5_u8oa4")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer/SceenContainer" unique_id=877334098]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
+
+[node name="Control3" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer" unique_id=1105003277]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=266227670]
 layout_mode = 2
