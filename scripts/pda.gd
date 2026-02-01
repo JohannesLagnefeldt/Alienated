@@ -3,9 +3,12 @@ extends Control
 var mask_selector = preload("res://scenes/ui/mask_select.tscn")
 var log_record = preload("res://scenes/ui/log_record.tscn")
 var log_mask = preload("res://scenes/ui/log_mask.tscn")
+var light_correct = preload("res://assets/ui/Green Button.png")
+var light_yellow = preload("res://assets/ui/Yellow Light.png")
 
 @export var guess_container : Control
 @export var log_container : Control
+@export var light_container : Control
 
 func set_mask_amount(amount : int):
 	for c in guess_container.get_children():
@@ -39,3 +42,10 @@ func evaluate_log(mask_results : Array[PuzzleManager.PUZZLE_RESULT]):
 	var last_log = log_container.get_child(log_container.get_child_count() - 1)
 	for c in last_log.get_child_count():
 		last_log.get_child(c).set_react(mask_results[c])
+
+func set_light(index : int, state : bool):
+	var light_to_update = light_container.get_child(index)
+	if state:
+		light_to_update.texture = light_correct
+	else:
+		light_to_update.texture = light_yellow

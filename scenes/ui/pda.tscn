@@ -19,7 +19,7 @@ texture = ExtResource("2_bknd1")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bknd1"]
 bg_color = Color(0, 0.15666667, 0.2, 0.9490196)
 
-[node name="RootContainer" type="Control" unique_id=118315646 node_paths=PackedStringArray("guess_container", "log_container")]
+[node name="RootContainer" type="Control" unique_id=118315646 node_paths=PackedStringArray("guess_container", "log_container", "light_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,6 +29,7 @@ grow_vertical = 2
 script = ExtResource("1_78e16")
 guess_container = NodePath("PDAContainer/PDA/PDAContainer/HBoxContainer2/GuessContainer")
 log_container = NodePath("PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/VBoxContainer/SceenContainer/LogContainer")
+light_container = NodePath("PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer")
 
 [node name="PDAContainer" type="HBoxContainer" parent="." unique_id=354880088]
 layout_mode = 1
