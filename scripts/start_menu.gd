@@ -7,6 +7,9 @@ extends Control
 @onready var check_button_3: CheckButton = $OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton3
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var player_space_ship: Sprite2D = $PlayerSpaceShip
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+var can_press := true
 
 func _ready() -> void:
 	var sfx_index = AudioServer.get_bus_index("SFX")
@@ -17,24 +20,27 @@ func _ready() -> void:
 
 
 func _on_play_pressed() -> void:
-	audio_stream_player.play()
-	get_tree().change_scene_to_file("res://scenes/UI.tscn")
+	if can_press:
+		audio_stream_player.play()
+		can_press = false
+		animation_player.play("ShipCrashing")
 
 
 func _on_options_pressed() -> void:
-	audio_stream_player.play()
-	options_menu.visible = true
+	if can_press:
+		audio_stream_player.play()
+		options_menu.visible = true
 
 
 func _on_credits_pressed() -> void:
-	audio_stream_player.play()
-	credits_menu.visible = true
-	
-
+	if can_press:
+		audio_stream_player.play()
+		credits_menu.visible = true
 
 func _on_exit_pressed() -> void:
-	audio_stream_player.play()
-	get_tree().quit()
+	if can_press:
+		audio_stream_player.play()
+		get_tree().quit()
 
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
@@ -75,7 +81,9 @@ func _on_options_mouse_exited() -> void:
 	var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu.png")
 	player_space_ship.texture = new_texture
 
-
 func _on_credits_back_pressed() -> void:
 	audio_stream_player.play()
 	credits_menu.visible = false
+
+func switch_scene():
+	get_tree().change_scene_to_file("res://scenes/UI.tscn")

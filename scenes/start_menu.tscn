@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cyshjuatqgvvb" path="res://scripts/start_menu.gd" id="1_thu50"]
 [ext_resource type="Texture2D" uid="uid://dd7wlcm4lm5dc" path="res://assets/sprites/MenuRocket/Rocket menu.png" id="3_h61rw"]
 [ext_resource type="AudioStream" uid="uid://dogsabwo0xxms" path="res://assets/sfx/alienated_ui_ok.wav" id="3_m7x51"]
+[ext_resource type="Texture2D" uid="uid://b5ju61mmg27m6" path="res://assets/sprites/MenuRocket/Rocket In Danger.png" id="5_4v6gu"]
+[ext_resource type="Texture2D" uid="uid://pqlpyryk06g1" path="res://assets/sprites/MenuRocket/Rocket Crashing.png" id="6_nxjfj"]
+[ext_resource type="AudioStream" uid="uid://bep2p3x4phrh6" path="res://assets/sfx/alienated_spaceship_fx.wav" id="7_u4qax"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcv5n"]
 
@@ -24,6 +27,134 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egh8s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1kog"]
+
+[sub_resource type="Animation" id="Animation_u4qax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSpaceShip:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2810717]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSpaceShip:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_h61rw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSpaceShip:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500, 300)]
+}
+
+[sub_resource type="Animation" id="Animation_5byqq"]
+resource_name = "ShipCrashing"
+length = 5.5235
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSpaceShip:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_4v6gu"), ExtResource("6_nxjfj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSpaceShip:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.8333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.2810717, 1.2810717, -6.283185307179586]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSpaceShip:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.8333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(500, 300), Vector2(500, 300), Vector2(1200, 1000)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Craching")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/3/use_blend = false
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_scene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_e58y3"]
+resource_name = "ShipIdle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSpaceShip:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.2810717, 1.4067354, 1.2810716709638374]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apowk"]
+_data = {
+&"RESET": SubResource("Animation_u4qax"),
+&"ShipCrashing": SubResource("Animation_5byqq"),
+&"ShipIdle": SubResource("Animation_e58y3")
+}
 
 [node name="StartMenu" type="Control" unique_id=282439887]
 layout_mode = 3
@@ -316,6 +447,17 @@ horizontal_alignment = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=720927778]
+libraries/ = SubResource("AnimationLibrary_apowk")
+
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=122811866]
+stream = ExtResource("7_u4qax")
+autoplay = true
+bus = &"SFX"
+
+[node name="Craching" type="AudioStreamPlayer" parent="." unique_id=534753722]
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_exited"]
