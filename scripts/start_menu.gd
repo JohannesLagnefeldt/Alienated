@@ -12,6 +12,7 @@ extends Control
 var can_press := true
 
 func _ready() -> void:
+	Music.play_main_menu()
 	var sfx_index = AudioServer.get_bus_index("SFX")
 	check_button.button_pressed = bool(AudioServer.get_bus_volume_linear(sfx_index))
 	var music_index = AudioServer.get_bus_index("Music")
