@@ -4,7 +4,7 @@ extends Node
 @export var interact_level = 1
 @export var tarnsition_strength : float = 2.2
 ## 0 for no music. 1 for menu. 2 for party. 3 for interact
-var current_music := 0
+var current_music := 3
 
 @onready var party: Node = $Party
 @onready var party_pads: AudioStreamPlayer = $Interact/PartyPads

@@ -7,6 +7,7 @@ enum PUZZLE_FUNC {PULL_FUNC, VALIDATE_FUNC, REWARD_MASK_INDEX}
 	[pull_three, match_all, 2],
 	[pull_three, match_reverse, 3],
 	[pull_three_no_square, more_edges, 4],
+	[pull_four, horn_sum_to_two, 5]
 ]
 enum PUZZLE_RESULT {NONE, EXISTS, MATCH}
 
@@ -40,6 +41,11 @@ func pull_three(mask_pool : Array[MaskResource]):
 # Puzzle 2
 func pull_three_no_square(mask_pool : Array[MaskResource]):
 	return pull_random(3, mask_pool, filter_square)
+
+# Puzzle 3
+func pull_four(mask_pool : Array[MaskResource]):
+	return pull_random(4, mask_pool, filter_nothing)
+
 
 ########################
 ###    Validators    ###
@@ -88,5 +94,30 @@ func more_edges(guess : Array[MaskResource], secret : Array[MaskResource]):
 			result.append(PUZZLE_RESULT.EXISTS)
 		else:
 			result.append(PUZZLE_RESULT.NONE)
+	
+	return result
+
+
+
+# Puzzle 3
+func single_horn_sum_to_two(guess_mask : MaskResource, secret_mask : MaskResource):
+	if guess_mask.horns_shape != secret_mask.horns_shape:
+		return false
+	return (guess_mask.nbr_horns + secret_mask.nbr_horns) == 2 
+func horn_sum_to_two(guess : Array[MaskResource], secret : Array[MaskResource]):
+	var result : Array[PUZZLE_RESULT] = []
+	var l = len(guess)
+	for m in l:
+		if single_horn_sum_to_two(guess[m], secret[l]):
+			result.append(PUZZLE_RESULT.MATCH)
+		else:
+			var found = false
+			for i in l:
+				if single_horn_sum_to_two(guess[i], secret[i]):
+					found = true
+			if found:
+				result.append(PUZZLE_RESULT.EXISTS)
+			else:
+				result.append(PUZZLE_RESULT.NONE)
 	
 	return result
