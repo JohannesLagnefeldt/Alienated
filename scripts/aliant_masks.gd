@@ -9,13 +9,16 @@ var selectors := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#for n in self.get_children():
-	#	remove_child(n)
+	Signals.connect("update_masks", on_update_masks)
+	on_update_masks()
+	
+func on_update_masks():
+	for n in self.get_children():
+		remove_child(n)
 	for i in Master.secret_masks.size():
 		var c : Panel = preload("res://scenes/alian_mask.tscn").instantiate()
 		add_child(c)
 		var styleBox: StyleBoxTexture = StyleBoxTexture.new()
 		c.add_theme_stylebox_override("panel", styleBox)
-		print(Master.secret_masks[i])
 		styleBox.set("texture", Master.secret_masks[i].mask_texture)
 		input_masks.append(c)

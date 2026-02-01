@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://djlh8dpdhnjbd" path="res://scenes/UI.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://d0rx05smr3kcx" path="res://scenes/Aliens/GravityAlien.tscn" id="3_ppgk2"]
 
-[node name="Node2D" type="Node2D" unique_id=536736937]
+[node name="Level" type="Node2D" unique_id=536736937]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760812839]
 position = Vector2(0, 64)

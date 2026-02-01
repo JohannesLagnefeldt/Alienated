@@ -22,7 +22,6 @@ func _input(event: InputEvent) -> void:
 		do_animation()	
 
 func _on_mask_reveal_animator_animation_finished(anim_name: StringName) -> void:
-	print("finished: " + anim_name)
 	if anim_name == "RevealMask":
 		mask_index += 1
 		if mask_index >= Master.secret_masks.size():
