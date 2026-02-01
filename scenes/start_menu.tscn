@@ -2,58 +2,93 @@
 
 [ext_resource type="Texture2D" uid="uid://dh4mo0pimf8l3" path="res://assets/PlaceHolder Menu Background.png" id="1_ouf4f"]
 [ext_resource type="Script" uid="uid://cyshjuatqgvvb" path="res://scripts/start_menu.gd" id="1_thu50"]
+[ext_resource type="Texture2D" uid="uid://dd7wlcm4lm5dc" path="res://assets/sprites/MenuRocket/Rocket menu.png" id="3_h61rw"]
 [ext_resource type="AudioStream" uid="uid://dogsabwo0xxms" path="res://assets/sfx/alienated_ui_ok.wav" id="3_m7x51"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcv5n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4v6gu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxjfj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4qax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5byqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e58y3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apowk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnuwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egh8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1kog"]
 
 [node name="StartMenu" type="Control" unique_id=282439887]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_thu50")
 
-[node name="PlaceHolderMenuBackground" type="Sprite2D" parent="." unique_id=1094779566]
+[node name="Background" type="TextureRect" parent="." unique_id=1601386176]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_ouf4f")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2004735886]
-layout_mode = 1
+[node name="PlayerSpaceShip" type="Sprite2D" parent="." unique_id=580117552]
+position = Vector2(500, 300)
+rotation = 1.2810717
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_h61rw")
+
+[node name="Play" type="Button" parent="PlayerSpaceShip" unique_id=1566046146]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -106.0
-offset_right = 34.0
-offset_bottom = 106.0
+offset_left = -1163.8268
+offset_top = -1158.6987
+offset_right = -555.3578
+offset_bottom = -816.072
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
+rotation = -1.0908308
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fcv5n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4v6gu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nxjfj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u4qax")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5byqq")
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=1566046146]
-layout_mode = 2
+[node name="Options" type="Button" parent="PlayerSpaceShip" unique_id=404724086]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1287.2104
+offset_top = -437.60016
+offset_right = -758.7075
+offset_bottom = -191.30524
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.6196655
 theme_override_font_sizes/font_size = 30
-text = "Play"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_apowk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vnuwp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_egh8s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b1kog")
 
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=404724086]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Options"
-
-[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1069988943]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Credits"
-
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=336566454]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Exit"
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=743858965]
+[node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=743858965]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -68,32 +103,32 @@ offset_bottom = 57.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer2" type="GridContainer" parent="VBoxContainer3" unique_id=807320867]
+[node name="VBoxContainer2" type="GridContainer" parent="OptionsMenu" unique_id=807320867]
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=825256359]
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer2" unique_id=825256359]
 layout_mode = 2
 text = "Music"
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1296683987]
+[node name="CheckButton" type="CheckButton" parent="OptionsMenu/VBoxContainer2" unique_id=1296683987]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=295056737]
+[node name="Label2" type="Label" parent="OptionsMenu/VBoxContainer2" unique_id=295056737]
 layout_mode = 2
 text = "Sound Effects"
 
-[node name="CheckButton2" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1075242719]
+[node name="CheckButton2" type="CheckButton" parent="OptionsMenu/VBoxContainer2" unique_id=1075242719]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=557339227]
+[node name="Label3" type="Label" parent="OptionsMenu/VBoxContainer2" unique_id=557339227]
 layout_mode = 2
 text = "Fullscreen"
 
-[node name="CheckButton3" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1727130418]
+[node name="CheckButton3" type="CheckButton" parent="OptionsMenu/VBoxContainer2" unique_id=1727130418]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer3" unique_id=1148875928]
+[node name="Button" type="Button" parent="OptionsMenu" unique_id=1148875928]
 layout_mode = 2
 text = "Back"
 
@@ -101,11 +136,40 @@ text = "Back"
 stream = ExtResource("3_m7x51")
 bus = &"SFX"
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
-[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton2" to="." method="_on_check_button_2_toggled"]
-[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton3" to="." method="_on_check_button_3_toggled"]
-[connection signal="button_down" from="VBoxContainer3/Button" to="." method="_on_button_button_down"]
+[node name="Credits" type="Button" parent="." unique_id=1069988943]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Exit" type="Button" parent="." unique_id=336566454]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 68.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[connection signal="mouse_entered" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="PlayerSpaceShip/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="PlayerSpaceShip/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerSpaceShip/Options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="PlayerSpaceShip/Options" to="." method="_on_options_pressed"]
+[connection signal="toggled" from="OptionsMenu/VBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="OptionsMenu/VBoxContainer2/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="toggled" from="OptionsMenu/VBoxContainer2/CheckButton3" to="." method="_on_check_button_3_toggled"]
+[connection signal="button_down" from="OptionsMenu/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

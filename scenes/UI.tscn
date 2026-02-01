@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b4a5xnqlk6qg" path="res://scripts/mask_container.gd" id="1_ro3t7"]
 [ext_resource type="Script" uid="uid://dpoi2s0pim4wy" path="res://scripts/mask_input_controller.gd" id="1_xpksx"]
 [ext_resource type="Script" uid="uid://cv12xd3lv3j3p" path="res://scripts/aliant_masks.gd" id="2_24e4x"]
-[ext_resource type="PackedScene" path="res://scenes/music.tscn" id="3_5en4g"]
+[ext_resource type="PackedScene" uid="uid://xpi130jvdfmg" path="res://scenes/music.tscn" id="3_5en4g"]
 [ext_resource type="AudioStream" uid="uid://dogsabwo0xxms" path="res://assets/sfx/alienated_ui_ok.wav" id="3_ua6yw"]
 [ext_resource type="Texture2D" uid="uid://nj644gt678po" path="res://assets/Placeholder Almost.png" id="4_3wlde"]
 [ext_resource type="Texture2D" uid="uid://bveeltxjps3ne" path="res://assets/Placeholder Good.png" id="5_xpksx"]
@@ -76,7 +76,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Music" parent="." unique_id=565445926 instance=ExtResource("3_5en4g")]
-bus = &"Master"
 
 [node name="Almost" type="Sprite2D" parent="." unique_id=372945827]
 visible = false
