@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b7c55uysspaw6" path="res://assets/ui/Device Background.png" id="1_biq1s"]
 [ext_resource type="Texture2D" uid="uid://dml113rtqm24n" path="res://assets/ui/Screen.png" id="2_bknd1"]
+[ext_resource type="Texture2D" uid="uid://xeqw6i6l50yv" path="res://assets/ui/Yellow Light.png" id="2_yuab1"]
+[ext_resource type="Texture2D" uid="uid://7rp08dd6yee1" path="res://assets/ui/Info Button no hover.png" id="3_46f4y"]
 [ext_resource type="PackedScene" uid="uid://spkdqn4axwsi" path="res://scenes/ui/mask_select.tscn" id="3_cfnno"]
 [ext_resource type="Texture2D" uid="uid://bgnbj2pheg4qd" path="res://assets/ui/Info Button.png" id="4_46f4y"]
 [ext_resource type="Script" uid="uid://b2xvom0fj7o72" path="res://scenes/ui/info_button.gd" id="4_bknd1"]
@@ -34,13 +36,14 @@ grow_vertical = 2
 [node name="Panel" type="Panel" parent="HBoxContainer" unique_id=389689678]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.6
+size_flags_stretch_ratio = 0.55
 theme_override_styles/panel = SubResource("StyleBoxTexture_h5xqe")
 
 [node name="PDAContainer" type="VBoxContainer" parent="HBoxContainer/Panel" unique_id=615175196]
-layout_mode = 0
-offset_right = 688.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -50,6 +53,63 @@ size_flags_stretch_ratio = 0.8
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/Success Spacer" unique_id=1635988454]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer" unique_id=429006948]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer" unique_id=985532348]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=621991625]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.85
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=757706172]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Light1" type="TextureRect" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=209011431]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.25
+texture = ExtResource("2_yuab1")
+expand_mode = 2
+
+[node name="Light2" type="TextureRect" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=957752119]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.25
+texture = ExtResource("2_yuab1")
+expand_mode = 2
+
+[node name="Light3" type="TextureRect" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1614368645]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.25
+texture = ExtResource("2_yuab1")
+expand_mode = 2
+
+[node name="Spacer2" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=441998170]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer2" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer" unique_id=2915108]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer" unique_id=362806043]
 layout_mode = 2
@@ -68,7 +128,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.9
 theme_override_styles/panel = SubResource("StyleBoxTexture_yuab1")
 
-[node name="SceenContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen" unique_id=1506735988]
+[node name="SceenContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen" unique_id=1204176370]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,15 +138,22 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="LogContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=90434756]
+[node name="LogContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=286453935]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="CurrPromptContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=32761266]
+[node name="CurrPromptContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=2025322342]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.2
+size_flags_stretch_ratio = 0.25
+
+[node name="Control" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=877334098]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=266227670]
 layout_mode = 2
@@ -102,7 +169,8 @@ size_flags_stretch_ratio = 0.05
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
-texture_normal = ExtResource("4_46f4y")
+texture_normal = ExtResource("3_46f4y")
+texture_hover = ExtResource("4_46f4y")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_bknd1")
@@ -148,7 +216,7 @@ size_flags_stretch_ratio = 0.05
 [node name="AlienSpacer" type="Control" parent="HBoxContainer" unique_id=744645077]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.4
+size_flags_stretch_ratio = 0.45
 
 [node name="Info Popup" type="Panel" parent="." unique_id=1399142351]
 visible = false
