@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bo7wh38a7qqnt" path="res://assets/sprites/mercury/Mercury Alien tentacle 1.png" id="4_8bmlw"]
 [ext_resource type="Texture2D" uid="uid://viwphmdlgscq" path="res://assets/sprites/mercury/Mercury Alien tentacle 2 Bottom.png" id="5_aw26e"]
 [ext_resource type="Texture2D" uid="uid://d58a2mnmvl44" path="res://assets/sprites/mercury/Mercury Alien tentacle 2 Top.png" id="6_8bn8l"]
+[ext_resource type="Texture2D" uid="uid://cuyyrd5ako25e" path="res://assets/masks/Mask 0.png" id="6_pkgsn"]
+[ext_resource type="Script" uid="uid://bsu6mbxbmccad" path="res://scripts/mask_revelear.gd" id="7_2t5vi"]
+[ext_resource type="Texture2D" uid="uid://bhbdplqqdxnq1" path="res://assets/sprites/mercury/Mercury Alien tentacle 1 front.png" id="7_ouik0"]
 [ext_resource type="Texture2D" uid="uid://b6tmkx3uf8trv" path="res://assets/sprites/mercury/Mercury Alien tentacle 3.png" id="7_s0ku0"]
+[ext_resource type="PackedScene" uid="uid://6kaba0t8c50" path="res://scenes/reaction_sprite.tscn" id="11_jko6m"]
 
 [sub_resource type="Animation" id="Animation_drgw4"]
 resource_name = "MercuryBody"
@@ -184,9 +188,9 @@ tracks/0/path = NodePath("Tentacle1:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -9.000002, -0.25, 0, 0.25, 0, 17, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.998996, 2)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -9.000002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -195,9 +199,9 @@ tracks/1/path = NodePath("Tentacle1:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -44.999992, -0.25, 0, 0.25, 0, -71, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.998996, 2)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -44.999992, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -219,7 +223,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.105, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.0211087, 1.998996)
+"times": PackedFloat32Array(0, 1.0211087, 2)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -230,7 +234,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.105, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.0211087, 1.998996)
+"times": PackedFloat32Array(0, 1.0211087, 2)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -544,6 +548,91 @@ _data = {
 &"Tentacle3": SubResource("Animation_ouik0")
 }
 
+[sub_resource type="Animation" id="Animation_hijx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.3333333, 3.3333333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.6441002]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_bukvn"]
+resource_name = "RevealMask"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.3333333, 3.3333333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1, 1.4666667, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.579523, -0.3351032, -0.3351032, -0.3351032, -1.579523]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 1, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-109.99999, 349.99997), Vector2(-120.00001, 546.6666), Vector2(-120.00001, 546.6666), Vector2(-120.00001, 546.6666), Vector2(-109.99999, 349.99997)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0qrp"]
+_data = {
+&"RESET": SubResource("Animation_hijx7"),
+&"RevealMask": SubResource("Animation_bukvn")
+}
+
 [sub_resource type="Animation" id="Animation_jko6m"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -844,7 +933,7 @@ _data = {
 &"StarDiamond": SubResource("Animation_7vu8m")
 }
 
-[node name="Node" type="Node" unique_id=1313831583]
+[node name="Node" type="Node2D" unique_id=2024355123]
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1365215887]
 scale = Vector2(0.3, 0.3)
@@ -889,6 +978,42 @@ autoplay = &"Tentacle3"
 [node name="AnimationBody" type="AnimationPlayer" parent="Body" unique_id=872522015]
 libraries/ = SubResource("AnimationLibrary_aw26e")
 autoplay = &"MercuryBody"
+
+[node name="MaskArm" type="Node2D" parent="Body" unique_id=1118722572]
+position = Vector2(-120, 370)
+rotation = -1.6441002
+scale = Vector2(3.3333333, 3.3333333)
+
+[node name="TentacleMask" type="Sprite2D" parent="Body/MaskArm" unique_id=187999557]
+z_index = -1
+position = Vector2(163.74, -18.795)
+rotation = 0.005685242
+scale = Vector2(0.29999998, -0.29999998)
+texture = ExtResource("4_8bmlw")
+
+[node name="Node2D" type="Node2D" parent="Body/MaskArm/TentacleMask" unique_id=1872920621]
+position = Vector2(-467.83157, -448.61752)
+rotation = -0.32941785
+scale = Vector2(0.20923421, -0.20923421)
+script = ExtResource("7_2t5vi")
+
+[node name="MaskRevealAnimator" type="AnimationPlayer" parent="Body/MaskArm/TentacleMask/Node2D" unique_id=905568266]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_h0qrp")
+
+[node name="RevealMask" type="Sprite2D" parent="Body/MaskArm/TentacleMask/Node2D" unique_id=481934111]
+position = Vector2(-6.1035156e-05, -0.00024414063)
+texture = ExtResource("6_pkgsn")
+
+[node name="MaskTentacleFront" type="Sprite2D" parent="Body/MaskArm/TentacleMask" unique_id=732882882]
+position = Vector2(-0.400921, 1.0168171)
+scale = Vector2(0.9999997, 0.9999997)
+texture = ExtResource("7_ouik0")
+
+[node name="ReactionSprite" parent="Body" unique_id=921331486 instance=ExtResource("11_jko6m")]
+position = Vector2(620, -173.33334)
+rotation = 0.23735096
+scale = Vector2(0.22499129, 0.22499129)
 
 [node name="StarPivot" type="Node2D" parent="." unique_id=1383473315]
 position = Vector2(2, -149)

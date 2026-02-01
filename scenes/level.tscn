@@ -1,14 +1,30 @@
 [gd_scene format=3 uid="uid://dxflhmrn14h31"]
 
 [ext_resource type="PackedScene" uid="uid://cg8lvh3yfo8nr" path="res://scenes/Aliens/mercury.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://c5yxvc8m7fkqr" path="res://scenes/Aliens/french_kiss.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://djlh8dpdhnjbd" path="res://scenes/UI.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://d0rx05smr3kcx" path="res://scenes/Aliens/GravityAlien.tscn" id="3_ppgk2"]
 
 [node name="Node2D" type="Node2D" unique_id=536736937]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760812839]
+position = Vector2(0, 64)
 
-[node name="Mercury" parent="." unique_id=1365215887 instance=ExtResource("1_2q6dc")]
+[node name="Node2D" type="Node2D" parent="." unique_id=982645739]
+
+[node name="Mercury" parent="Node2D" unique_id=1365215887 instance=ExtResource("1_2q6dc")]
+position = Vector2(53, -94)
+
+[node name="FrenchKiss" parent="Node2D" unique_id=805710949 instance=ExtResource("2_mx8sn")]
+position = Vector2(-234, 252)
+scale = Vector2(0.31436068, 0.31436068)
+
+[node name="Node" parent="Node2D" unique_id=2108504642 instance=ExtResource("3_ppgk2")]
+position = Vector2(391, 162)
+scale = Vector2(0.32189304, 0.32189304)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=606695143]
+visible = false
 
 [node name="UI" parent="CanvasLayer" unique_id=838816338 instance=ExtResource("2_w7c3h")]
+visible = false
