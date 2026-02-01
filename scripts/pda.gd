@@ -33,6 +33,8 @@ func clear_log():
 
 func add_log(masks : Array[Texture2D]):
 	var new_record = log_record.instantiate()
+	for c in new_record.get_children():
+		new_record.remove_child(c)
 	for m in masks:
 		var new_mask = log_mask.instantiate()
 		new_mask.texture = m
