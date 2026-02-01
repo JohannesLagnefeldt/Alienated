@@ -40,6 +40,11 @@ func add_log(masks : Array[Texture2D]):
 		new_mask.texture = m
 		new_record.add_child(new_mask)
 	log_container.add_child(new_record)
+	clear_last_log()
+	
+func clear_last_log():
+	if (len(log_container.get_children()) >= 4):
+		log_container.remove_child(log_container.get_children()[0])
 
 func evaluate_log(mask_results : Array[PuzzleManager.PUZZLE_RESULT]):
 	var last_log = log_container.get_child(log_container.get_child_count() - 1)
