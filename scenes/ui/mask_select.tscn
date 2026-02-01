@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://spkdqn4axwsi"]
+
+[ext_resource type="Texture2D" uid="uid://bwhksg170gkya" path="res://assets/Placeholder oni mask blue.png" id="1_3lvqu"]
+[ext_resource type="Script" uid="uid://c75t2d1cmybcb" path="res://scripts/mask_select.gd" id="1_na0c7"]
+[ext_resource type="Texture2D" uid="uid://dpli8je0a6yr8" path="res://assets/ui/Scroll Button.png" id="1_u58xg"]
+[ext_resource type="AudioStream" uid="uid://01c7k881owlu" path="res://assets/sfx/alienated_ui_toggle.wav" id="4_m3v78"]
+
+[node name="MaskSelector" type="HBoxContainer" unique_id=650234716 node_paths=PackedStringArray("mask_texture_rect")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource("1_na0c7")
+mask_texture_rect = NodePath("TextureRect")
+
+[node name="ButtonLeft" type="TextureButton" parent="." unique_id=431966014]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+texture_normal = ExtResource("1_u58xg")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1230912047]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_3lvqu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ButtonRight" type="TextureButton" parent="." unique_id=1189415624]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+texture_normal = ExtResource("1_u58xg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AudioToggleMask" type="AudioStreamPlayer2D" parent="." unique_id=330619815]
+stream = ExtResource("4_m3v78")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="ButtonRight" to="." method="_on_button_right_pressed"]
