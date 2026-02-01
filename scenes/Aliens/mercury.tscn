@@ -1011,7 +1011,7 @@ scale = Vector2(0.9999997, 0.9999997)
 texture = ExtResource("7_ouik0")
 
 [node name="ReactionSprite" parent="Body" unique_id=921331486 instance=ExtResource("11_jko6m")]
-position = Vector2(620, -173.33334)
+position = Vector2(356.795, -173.333)
 rotation = 0.23735096
 scale = Vector2(0.22499129, 0.22499129)
 

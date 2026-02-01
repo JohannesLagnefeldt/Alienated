@@ -1,5 +1,7 @@
 extends Node
 
+@onready var pda_ui: PDA_UI = %PDAUI
+
 var RNG : RandomNumberGenerator = RandomNumberGenerator.new()
 var MASK_TEXTURES : Array[Texture2D] = [
 	preload("res://assets/masks/Mask 0.png"),
@@ -39,10 +41,10 @@ var MASKS : Array[MaskResource] = [
 
 var current_masks : Array[int]
 var secret_masks : Array[MaskResource]
-var masks_in_guess: int = 4;
+var masks_in_guess: int = 4
 var current_puzzle : int = 0
 var puzzle_manager : PuzzleManager = PuzzleManager.new()
-var puzzle_amount : int = 3
+var puzzle_amount : int = 4
 var correct_guesses : int = 0
 
 var log : Array[Array] = []
@@ -74,6 +76,8 @@ func next_level():
 	current_puzzle += 1
 	if (current_puzzle == puzzle_amount):
 		Signals.emit_signal("game_win")
+		get_tree().change_scene_to_file("res://scenes/Win.tscn")
 	print("current puzzle: " + str(current_puzzle))
 	current_masks.append(current_masks[len(current_masks) - 1] + 1)
+	pda_ui.set_mask_amount(len(secret_masks))
 	generate_masks()

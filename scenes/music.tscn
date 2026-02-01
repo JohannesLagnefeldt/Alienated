@@ -44,38 +44,47 @@ bus = &"Music"
 
 [node name="Topper" type="AudioStreamPlayer" parent="Interact" unique_id=2094453154]
 stream = ExtResource("5_154te")
+autoplay = true
 bus = &"Music"
 
 [node name="Bass" type="AudioStreamPlayer" parent="Interact" unique_id=1951430830]
 stream = ExtResource("6_b4vsj")
+autoplay = true
 bus = &"Music"
 
 [node name="Bass2" type="AudioStreamPlayer" parent="Interact" unique_id=1625919854]
 stream = ExtResource("7_inoir")
+autoplay = true
 bus = &"Music"
 
 [node name="Wawa" type="AudioStreamPlayer" parent="Interact" unique_id=920320599]
 stream = ExtResource("8_b6yqm")
+autoplay = true
 bus = &"Music"
 
 [node name="Kick" type="AudioStreamPlayer" parent="Interact" unique_id=312905751]
 stream = ExtResource("9_h42cm")
+autoplay = true
 bus = &"Music"
 
 [node name="Beat" type="AudioStreamPlayer" parent="Interact" unique_id=981851212]
 stream = ExtResource("10_p7e6x")
+autoplay = true
 bus = &"Music"
 
 [node name="Vox" type="AudioStreamPlayer" parent="Interact" unique_id=823153203]
 stream = ExtResource("11_y3f4e")
+autoplay = true
 bus = &"Music"
 
 [node name="FX" type="AudioStreamPlayer" parent="Interact" unique_id=457514312]
 stream = ExtResource("12_ehdtx")
+autoplay = true
 bus = &"Music"
 
 [node name="MainMenu" type="Node" parent="." unique_id=871340956]
 
 [node name="AlienatedMainmenu" type="AudioStreamPlayer" parent="MainMenu" unique_id=517685344]
 stream = ExtResource("14_inoir")
+autoplay = true
 bus = &"Music"
