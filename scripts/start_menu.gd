@@ -1,6 +1,7 @@
 extends Control
 
 @onready var options_menu: CanvasLayer = $OptionsMenu
+@onready var credits_menu: CanvasLayer = $CreditsMenu
 @onready var check_button: CheckButton = $OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton
 @onready var check_button_2: CheckButton = $OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton2
 @onready var check_button_3: CheckButton = $OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton3
@@ -27,6 +28,7 @@ func _on_options_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	audio_stream_player.play()
+	credits_menu.visible = true
 	
 
 
@@ -72,3 +74,8 @@ func _on_options_mouse_entered() -> void:
 func _on_options_mouse_exited() -> void:
 	var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu.png")
 	player_space_ship.texture = new_texture
+
+
+func _on_credits_back_pressed() -> void:
+	audio_stream_player.play()
+	credits_menu.visible = false

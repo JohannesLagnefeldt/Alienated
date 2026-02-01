@@ -126,7 +126,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.39215687)
+color = Color(0.15487596, 0.154876, 0.15487596, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="OptionsMenu" unique_id=1121790716]
 anchors_preset = 15
@@ -167,6 +167,156 @@ layout_mode = 2
 layout_mode = 2
 text = "Back"
 
+[node name="CreditsMenu" type="CanvasLayer" parent="." unique_id=2146117185]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CreditsMenu" unique_id=1257859505]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3083999, 0.3083999, 0.3083999, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="CreditsMenu" unique_id=82678199]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsMenu/CenterContainer" unique_id=498771729]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CreditsMenu/CenterContainer/VBoxContainer" unique_id=1073215497]
+layout_mode = 2
+columns = 3
+
+[node name="Name" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=170444207]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "cowboycade"
+
+[node name="Spacer" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1849173054]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=259528989]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio, Music"
+horizontal_alignment = 2
+
+[node name="Name2" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1071688972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Gerne"
+
+[node name="Spacer2" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=359585346]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role2" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1204850139]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2D Art"
+horizontal_alignment = 2
+
+[node name="Name3" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1241751981]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Kasky"
+
+[node name="Spacer3" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=640489600]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role3" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=2116648459]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development"
+horizontal_alignment = 2
+
+[node name="Name4" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1175620889]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Johannes Lagnefeldt"
+
+[node name="Spacer4" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=138661366]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role4" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=72259033]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development, Programming"
+horizontal_alignment = 2
+
+[node name="Name5" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=698395848]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "LimeVonHnase"
+
+[node name="Spacer5" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1331369664]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role5" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=500438892]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development, Programming"
+horizontal_alignment = 2
+
+[node name="Name6" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=434387000]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Pranav Kalambi"
+
+[node name="Spacer6" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=254693870]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role6" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1739384857]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2D Art"
+horizontal_alignment = 2
+
+[node name="Name7" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=370784341]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SamuelSB"
+
+[node name="Spacer7" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=592495303]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role7" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=502660663]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development Programming"
+horizontal_alignment = 2
+
+[node name="Name8" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=761791258]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "vakninir"
+
+[node name="Spacer8" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1542445142]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role8" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=721474420]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development, Programming"
+horizontal_alignment = 2
+
+[node name="CreditsBack" type="Button" parent="CreditsMenu/CenterContainer/VBoxContainer" unique_id=1963129002]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
 [connection signal="mouse_entered" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="PlayerSpaceShip/Play" to="." method="_on_play_pressed"]
@@ -179,3 +329,4 @@ text = "Back"
 [connection signal="toggled" from="OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton2" to="." method="_on_check_button_2_toggled"]
 [connection signal="toggled" from="OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton3" to="." method="_on_check_button_3_toggled"]
 [connection signal="button_down" from="OptionsMenu/CenterContainer/hBox/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="CreditsMenu/CenterContainer/VBoxContainer/CreditsBack" to="." method="_on_credits_back_pressed"]
