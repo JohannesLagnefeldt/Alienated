@@ -80,6 +80,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(500, 300)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerSpaceShip/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5byqq"]
 resource_name = "ShipCrashing"
@@ -106,7 +118,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4, 2.8333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [1.2810717, 1.2810717, -6.283185307179586]
+"values": [1.2810717, 1.2810717, -12.566370614359172]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -145,6 +157,18 @@ tracks/4/keys = {
 "method": &"switch_scene"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerSpaceShip/CPUParticles2D:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_e58y3"]
 resource_name = "ShipIdle"
@@ -180,6 +204,7 @@ grow_vertical = 2
 script = ExtResource("1_thu50")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1601386176]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,6 +259,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_egh8s")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b1kog")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerSpaceShip" unique_id=743381464]
+z_index = -1
 position = Vector2(0, 600)
 amount = 200
 texture = SubResource("GradientTexture2D_u4qax")
