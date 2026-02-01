@@ -55,7 +55,6 @@ func _input(event: InputEvent) -> void:
 			Signals.emit_signal("level_win")
 			Master.next_level()
 			pda_ui.set_mask_amount(len(Master.secret_masks))
-			Signals.emit_signal("alien_change")
 			pda_ui.add_log(getTextures(Master.secret_masks))
 		else:
 			Signals.emit_signal("show_masks")

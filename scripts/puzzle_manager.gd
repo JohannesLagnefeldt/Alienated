@@ -101,19 +101,25 @@ func match_reverse(guess : Array[MaskResource], secret : Array[MaskResource]):
 
 
 # Puzzle 2
-func more_edges(guess : Array[MaskResource], secret : Array[MaskResource]):
+func single_more_edges(guess_mask : MaskResource, secret_mask : MaskResource):
 	var scale = [MaskResource.SHAPE.ROUND, MaskResource.SHAPE.TRIANGLE, MaskResource.SHAPE.SQUARE, MaskResource.SHAPE.PENTAGRAM]
-	
+	var edges = scale.find(secret_mask.shape)
+	return guess_mask.shape == scale[edges + 1]
+func more_edges(guess : Array[MaskResource], secret : Array[MaskResource]):	
 	var result : Array[PUZZLE_RESULT] = []
 	var l = len(guess)
 	for m in l:
-		var edges = scale.find(secret[m].shape)
-		if guess[m].shape != scale[edges + 1]:
+		if single_more_edges(guess[m], secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)
-		elif secret.has(guess[m]):
-			result.append(PUZZLE_RESULT.EXISTS)
 		else:
-			result.append(PUZZLE_RESULT.NONE)
+			var found = false
+			for i in l:
+				if single_more_edges(guess[i], secret[i]):
+					found = true
+			if found:
+				result.append(PUZZLE_RESULT.EXISTS)
+			else:
+				result.append(PUZZLE_RESULT.NONE)
 	
 	return result
 
@@ -121,12 +127,10 @@ func more_edges(guess : Array[MaskResource], secret : Array[MaskResource]):
 
 # Puzzle 3
 func single_horn_sum_to_two(guess_mask : MaskResource, secret_mask : MaskResource):
-	if guess_mask.horns_shape != secret_mask.horns_shape:
-		return false
 	return (guess_mask.nbr_horns + secret_mask.nbr_horns) == 2 
 func horn_sum_to_two(guess : Array[MaskResource], secret : Array[MaskResource]):
 	var result : Array[PUZZLE_RESULT] = []
-	var l = len(guess) - 1
+	var l = len(guess)
 	for m in l:
 		if single_horn_sum_to_two(guess[m], secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)
@@ -147,7 +151,7 @@ func single_same_horn_diff_shape(guess_mask : MaskResource, secret_mask : MaskRe
 	return guess_mask.horns_shape == secret_mask.horns_shape and guess_mask.shape != secret_mask.shape
 func same_horn_diff_shape(guess : Array[MaskResource], secret : Array[MaskResource]):
 	var result : Array[PUZZLE_RESULT] = []
-	var l = len(guess) - 1
+	var l = len(guess)
 	for m in l:
 		if single_same_horn_diff_shape(guess[m], secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)
