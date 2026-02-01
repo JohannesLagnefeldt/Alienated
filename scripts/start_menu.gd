@@ -1,7 +1,6 @@
 extends Control
 
-@onready var v_box_container: VBoxContainer = $VBoxContainer
-@onready var v_box_container_3: VBoxContainer = $VBoxContainer3
+@onready var options_menu: VBoxContainer = $OptionsMenu
 @onready var check_button: CheckButton = $VBoxContainer3/VBoxContainer2/CheckButton
 @onready var check_button_2: CheckButton = $VBoxContainer3/VBoxContainer2/CheckButton2
 @onready var check_button_3: CheckButton = $VBoxContainer3/VBoxContainer2/CheckButton3
@@ -23,13 +22,12 @@ func _on_play_pressed() -> void:
 
 func _on_options_pressed() -> void:
 	audio_stream_player.play()
-	v_box_container.visible = false
-	v_box_container_3.visible = true
+	options_menu.visible = true
 
 
 func _on_credits_pressed() -> void:
 	audio_stream_player.play()
-	v_box_container.visible = false
+	
 
 
 func _on_exit_pressed() -> void:
@@ -57,8 +55,7 @@ func _on_check_button_3_toggled(toggled_on: bool) -> void:
 		
 func _on_button_button_down() -> void:
 	audio_stream_player.play()
-	v_box_container.visible = true
-	v_box_container_3.visible = false
+	options_menu.visible = false
 
 func _on_play_mouse_entered() -> void:
 	var new_texture : Texture2D = load("res://assets/sprites/MenuRocket/Rocket menu crsh hover.png")
