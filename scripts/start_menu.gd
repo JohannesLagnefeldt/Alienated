@@ -17,10 +17,11 @@ func _ready() -> void:
 	var music_index = AudioServer.get_bus_index("Music")
 	check_button_2.button_pressed = bool(AudioServer.get_bus_volume_linear(music_index))
 	check_button_3.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
-
+	animation_player.play("ShipIdle")
 
 func _on_play_pressed() -> void:
 	if can_press:
+		animation_player.pause()
 		audio_stream_player.play()
 		can_press = false
 		animation_player.play("ShipCrashing")
