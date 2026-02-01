@@ -118,7 +118,7 @@ func single_horn_sum_to_two(guess_mask : MaskResource, secret_mask : MaskResourc
 	return (guess_mask.nbr_horns + secret_mask.nbr_horns) == 2 
 func horn_sum_to_two(guess : Array[MaskResource], secret : Array[MaskResource]):
 	var result : Array[PUZZLE_RESULT] = []
-	var l = len(guess)
+	var l = len(guess) - 1
 	for m in l:
 		if single_horn_sum_to_two(guess[m], secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)
@@ -139,7 +139,7 @@ func single_same_horn_diff_shape(guess_mask : MaskResource, secret_mask : MaskRe
 	return guess_mask.horns_shape == secret_mask.horns_shape and guess_mask.shape != secret_mask.shape
 func same_horn_diff_shape(guess : Array[MaskResource], secret : Array[MaskResource]):
 	var result : Array[PUZZLE_RESULT] = []
-	var l = len(guess)
+	var l = len(guess) - 1
 	for m in l:
 		if single_same_horn_diff_shape(guess[m], secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)

@@ -45,7 +45,7 @@ func _input(event: InputEvent) -> void:
 		checking_masks = false
 		print("Correct Guesses: " + str(Master.correct_guesses))
 		Master.generate_masks()
-		Signals.emit_signal("show_masks")
+		
 		pda_ui.add_log(getTextures(Master.secret_masks))
 		Signals.emit_signal("update_masks")
 		Signals.emit_signal("point_change", Master.correct_guesses)
@@ -54,5 +54,8 @@ func _input(event: InputEvent) -> void:
 			pda_ui.clear_log()
 			Signals.emit_signal("level_win")
 			Master.next_level()
+			pda_ui.set_mask_amount(len(Master.secret_masks))
 			Signals.emit_signal("alien_change")
 			pda_ui.add_log(getTextures(Master.secret_masks))
+		else:
+			Signals.emit_signal("show_masks")
