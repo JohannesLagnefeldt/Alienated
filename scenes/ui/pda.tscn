@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cehdu7qfnj4ti"]
 
+[ext_resource type="Script" uid="uid://lwd1m5ae2mc1" path="res://scripts/pda.gd" id="1_78e16"]
 [ext_resource type="Texture2D" uid="uid://b7c55uysspaw6" path="res://assets/ui/Device Background.png" id="1_biq1s"]
 [ext_resource type="Texture2D" uid="uid://dml113rtqm24n" path="res://assets/ui/Screen.png" id="2_bknd1"]
 [ext_resource type="Texture2D" uid="uid://xeqw6i6l50yv" path="res://assets/ui/Yellow Light.png" id="2_yuab1"]
 [ext_resource type="Texture2D" uid="uid://7rp08dd6yee1" path="res://assets/ui/Info Button no hover.png" id="3_46f4y"]
 [ext_resource type="PackedScene" uid="uid://spkdqn4axwsi" path="res://scenes/ui/mask_select.tscn" id="3_cfnno"]
 [ext_resource type="Texture2D" uid="uid://bgnbj2pheg4qd" path="res://assets/ui/Info Button.png" id="4_46f4y"]
-[ext_resource type="Script" uid="uid://b2xvom0fj7o72" path="res://scenes/ui/info_button.gd" id="4_bknd1"]
+[ext_resource type="Script" uid="uid://b2xvom0fj7o72" path="res://scripts/info_button.gd" id="4_bknd1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5xqe"]
 texture = ExtResource("1_biq1s")
@@ -17,15 +18,17 @@ texture = ExtResource("2_bknd1")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bknd1"]
 bg_color = Color(0, 0.15666667, 0.2, 0.9490196)
 
-[node name="RootContainer" type="Control" unique_id=118315646]
+[node name="RootContainer" type="Control" unique_id=118315646 node_paths=PackedStringArray("guess_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_78e16")
+guess_container = NodePath("PDAContainer/PDA/PDAContainer/HBoxContainer2/GuessContainer")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=354880088]
+[node name="PDAContainer" type="HBoxContainer" parent="." unique_id=354880088]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,13 +36,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="HBoxContainer" unique_id=389689678]
+[node name="PDA" type="Panel" parent="PDAContainer" unique_id=389689678]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.55
 theme_override_styles/panel = SubResource("StyleBoxTexture_h5xqe")
 
-[node name="PDAContainer" type="VBoxContainer" parent="HBoxContainer/Panel" unique_id=615175196]
+[node name="PDAContainer" type="VBoxContainer" parent="PDAContainer/PDA" unique_id=615175196]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,12 +52,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="Success Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer" unique_id=358814254]
+[node name="Success Spacer" type="Control" parent="PDAContainer/PDA/PDAContainer" unique_id=358814254]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/Success Spacer" unique_id=1635988454]
+[node name="VBoxContainer" type="VBoxContainer" parent="PDAContainer/PDA/PDAContainer/Success Spacer" unique_id=1635988454]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,73 +65,73 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer" unique_id=429006948]
+[node name="Spacer" type="Control" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer" unique_id=429006948]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer" unique_id=985532348]
+[node name="HBoxContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer" unique_id=985532348]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=621991625]
+[node name="Spacer" type="Control" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=621991625]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.85
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=757706172]
+[node name="HBoxContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=757706172]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Light1" type="TextureRect" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=209011431]
+[node name="Light1" type="TextureRect" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=209011431]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.25
 texture = ExtResource("2_yuab1")
 expand_mode = 2
 
-[node name="Light2" type="TextureRect" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=957752119]
+[node name="Light2" type="TextureRect" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=957752119]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.25
 texture = ExtResource("2_yuab1")
 expand_mode = 2
 
-[node name="Light3" type="TextureRect" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1614368645]
+[node name="Light3" type="TextureRect" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1614368645]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.25
 texture = ExtResource("2_yuab1")
 expand_mode = 2
 
-[node name="Spacer2" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=441998170]
+[node name="Spacer2" type="Control" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer/HBoxContainer" unique_id=441998170]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Spacer2" type="Control" parent="HBoxContainer/Panel/PDAContainer/Success Spacer/VBoxContainer" unique_id=2915108]
+[node name="Spacer2" type="Control" parent="PDAContainer/PDA/PDAContainer/Success Spacer/VBoxContainer" unique_id=2915108]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer" unique_id=362806043]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer" unique_id=362806043]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2" unique_id=2042229913]
+[node name="VBoxContainer" type="VBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2" unique_id=2042229913]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
 
-[node name="Screen" type="Panel" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=1226680861]
+[node name="Screen" type="Panel" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=1226680861]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.9
 theme_override_styles/panel = SubResource("StyleBoxTexture_yuab1")
 
-[node name="SceenContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen" unique_id=1204176370]
+[node name="SceenContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen" unique_id=1204176370]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,34 +141,34 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="LogContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=286453935]
+[node name="LogContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=286453935]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="CurrPromptContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=2025322342]
+[node name="CurrPromptContainer" type="VBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=2025322342]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
 
-[node name="Control" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=877334098]
+[node name="Control" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=877334098]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=266227670]
+[node name="HBoxContainer" type="HBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=266227670]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=501198456]
+[node name="Spacer" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=501198456]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.05
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1607040007 node_paths=PackedStringArray("info_popup")]
+[node name="TextureButton" type="TextureButton" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1607040007 node_paths=PackedStringArray("info_popup")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
@@ -176,44 +179,44 @@ stretch_mode = 5
 script = ExtResource("4_bknd1")
 info_popup = NodePath("../../../../../../../Info Popup")
 
-[node name="Spacer2" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=782747463]
+[node name="Spacer2" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=782747463]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.7
 
-[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=1361348069]
+[node name="Spacer" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=1361348069]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.03
 
-[node name="GuessContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2" unique_id=1360071548]
+[node name="GuessContainer" type="VBoxContainer" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2" unique_id=1360071548]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="MaskSelector" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=650234716 instance=ExtResource("3_cfnno")]
+[node name="MaskSelector" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/GuessContainer" unique_id=650234716 instance=ExtResource("3_cfnno")]
 layout_mode = 2
 
-[node name="MaskSelector2" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=1093035865 instance=ExtResource("3_cfnno")]
+[node name="MaskSelector2" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/GuessContainer" unique_id=1093035865 instance=ExtResource("3_cfnno")]
 layout_mode = 2
 
-[node name="MaskSelector3" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=234995876 instance=ExtResource("3_cfnno")]
+[node name="MaskSelector3" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/GuessContainer" unique_id=234995876 instance=ExtResource("3_cfnno")]
 layout_mode = 2
 
-[node name="MaskSelector4" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=182859906 instance=ExtResource("3_cfnno")]
+[node name="MaskSelector4" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2/GuessContainer" unique_id=182859906 instance=ExtResource("3_cfnno")]
 layout_mode = 2
 
-[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2" unique_id=1887310196]
+[node name="Spacer" type="Control" parent="PDAContainer/PDA/PDAContainer/HBoxContainer2" unique_id=1887310196]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.09
 
-[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer" unique_id=1835956569]
+[node name="Spacer" type="Control" parent="PDAContainer/PDA/PDAContainer" unique_id=1835956569]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 
-[node name="AlienSpacer" type="Control" parent="HBoxContainer" unique_id=744645077]
+[node name="AlienSpacer" type="Control" parent="PDAContainer" unique_id=744645077]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.45
@@ -256,12 +259,13 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 17
 text = "Communicate with the aliens using masks and
 make friends on this unfamiliar planet!
 
 The alien will present an ordered set of masks.
 You must respond with the correct masks.
+After choosing your masks, press Enter to guess!
 
 Each level has a different rule detemining what
 the correct response is! Follow the clues and 
@@ -282,5 +286,5 @@ offset_bottom = 54.0
 theme_override_font_sizes/font_size = 26
 text = "X"
 
-[connection signal="pressed" from="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" to="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" method="_on_pressed"]
-[connection signal="pressed" from="Info Popup/Button" to="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" method="_on_button_pressed"]
+[connection signal="pressed" from="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" to="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="Info Popup/Button" to="PDAContainer/PDA/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer/TextureButton" method="_on_button_pressed"]

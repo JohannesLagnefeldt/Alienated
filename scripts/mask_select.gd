@@ -1,4 +1,5 @@
 extends HBoxContainer
+class_name MaskSelect
 
 @export var mask_texture_rect : TextureRect
 @onready var audio_toggle_mask : AudioStreamPlayer2D
