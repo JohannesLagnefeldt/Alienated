@@ -52,7 +52,7 @@ func match_all(guess : Array[MaskResource], secret : Array[MaskResource]):
 	for m in l:
 		if guess[m].equals(secret[m]):
 			result.append(PUZZLE_RESULT.MATCH)
-		elif secret[m].has(guess[m]):
+		elif secret.has(guess[m]):
 			result.append(PUZZLE_RESULT.EXISTS)
 		else:
 			result.append(PUZZLE_RESULT.NONE)
@@ -66,7 +66,7 @@ func match_reverse(guess : Array[MaskResource], secret : Array[MaskResource]):
 	for m in l:
 		if guess[m].equals(secret[l - 1 - m]):
 			result.append(PUZZLE_RESULT.MATCH)
-		elif secret[m].has(guess[m]):
+		elif secret.has(guess[m]):
 			result.append(PUZZLE_RESULT.EXISTS)
 		else:
 			result.append(PUZZLE_RESULT.NONE)
@@ -84,7 +84,7 @@ func more_edges(guess : Array[MaskResource], secret : Array[MaskResource]):
 		var edges = scale.find(secret[m].shape)
 		if guess[m].shape != scale[edges + 1]:
 			result.append(PUZZLE_RESULT.MATCH)
-		elif secret[m].has(guess[m]):
+		elif secret.has(guess[m]):
 			result.append(PUZZLE_RESULT.EXISTS)
 		else:
 			result.append(PUZZLE_RESULT.NONE)

@@ -97,3 +97,5 @@ texture = ExtResource("6_24e4x")
 [node name="AudioToggleMask2" type="AudioStreamPlayer2D" parent="." unique_id=2088378167]
 position = Vector2(0, 448)
 stream = ExtResource("3_ua6yw")
+
+[connection signal="alien_react" from="." to="." method="_on_alien_react"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6kaba0t8c50"]
 
-[ext_resource type="Script" uid="uid://b3gdfeiycerfc" path="res://scenes/reaction_sprite.gd" id="1_6hsd8"]
+[ext_resource type="Script" uid="uid://b3gdfeiycerfc" path="res://scripts/reaction_sprite.gd" id="1_6hsd8"]
 [ext_resource type="Texture2D" uid="uid://7d3ewcln7lr4" path="res://assets/sprites/reactions/Spritesheet- rating.png" id="1_usfci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hsd8"]

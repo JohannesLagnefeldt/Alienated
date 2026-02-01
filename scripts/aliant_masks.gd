@@ -5,7 +5,7 @@ var input_masks := []
 var selectors := []
 
 @onready var audio_toggle_mask_2: AudioStreamPlayer2D = $"../../../AudioToggleMask2"
-@onready var selector_box: HBoxContainer = $"../Selector"
+@onready var selector_box: HBoxContainer = $"../../Control2/Selector"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
