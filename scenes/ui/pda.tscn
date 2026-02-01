@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://cehdu7qfnj4ti"]
+
+[ext_resource type="Texture2D" uid="uid://b7c55uysspaw6" path="res://assets/ui/Device Background.png" id="1_biq1s"]
+[ext_resource type="Texture2D" uid="uid://dml113rtqm24n" path="res://assets/ui/Screen.png" id="2_bknd1"]
+[ext_resource type="PackedScene" uid="uid://b3xqkba08wweq" path="res://scenes/mask.tscn" id="2_cfnno"]
+[ext_resource type="PackedScene" uid="uid://spkdqn4axwsi" path="res://scenes/ui/mask_select.tscn" id="3_cfnno"]
+[ext_resource type="Texture2D" uid="uid://bgnbj2pheg4qd" path="res://assets/ui/Info Button.png" id="4_46f4y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5xqe"]
+texture = ExtResource("1_biq1s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuab1"]
+texture = ExtResource("2_bknd1")
+
+[node name="RootContainer" type="Control" unique_id=118315646]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=354880088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer" unique_id=389689678]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_styles/panel = SubResource("StyleBoxTexture_h5xqe")
+
+[node name="PDAContainer" type="VBoxContainer" parent="HBoxContainer/Panel" unique_id=615175196]
+layout_mode = 0
+offset_right = 688.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="Success Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer" unique_id=358814254]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer" unique_id=362806043]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2" unique_id=2042229913]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="Screen" type="Panel" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=1226680861]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+theme_override_styles/panel = SubResource("StyleBoxTexture_yuab1")
+
+[node name="SceenContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen" unique_id=1506735988]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="LogContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=90434756]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="CurrPromptContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer" unique_id=32761266]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="mask4" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer/CurrPromptContainer" unique_id=1733299485 instance=ExtResource("2_cfnno")]
+layout_mode = 2
+
+[node name="mask5" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer/CurrPromptContainer" unique_id=1512275373 instance=ExtResource("2_cfnno")]
+layout_mode = 2
+
+[node name="mask6" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/Screen/SceenContainer/CurrPromptContainer" unique_id=1969132897 instance=ExtResource("2_cfnno")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=266227670]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=501198456]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1607040007]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+texture_normal = ExtResource("4_46f4y")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/VBoxContainer" unique_id=1361348069]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.03
+
+[node name="GuessContainer" type="VBoxContainer" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2" unique_id=1360071548]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="MaskSelector" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=650234716 instance=ExtResource("3_cfnno")]
+layout_mode = 2
+
+[node name="MaskSelector2" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=1093035865 instance=ExtResource("3_cfnno")]
+layout_mode = 2
+
+[node name="MaskSelector3" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=234995876 instance=ExtResource("3_cfnno")]
+layout_mode = 2
+
+[node name="MaskSelector4" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2/GuessContainer" unique_id=182859906 instance=ExtResource("3_cfnno")]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer/HBoxContainer2" unique_id=1887310196]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.09
+
+[node name="Spacer" type="Control" parent="HBoxContainer/Panel/PDAContainer" unique_id=1835956569]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="Info Popup" type="Panel" parent="HBoxContainer/Panel" unique_id=1399142351]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -229.0
+offset_right = 204.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/Info Popup" unique_id=1882837192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Panel/Info Popup/VBoxContainer" unique_id=1972310987]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+theme_override_font_sizes/font_size = 35
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/Panel/Info Popup/VBoxContainer" unique_id=142470472]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+text = "Communicate with the aliens using masks and
+make friends on this unfamiliar planet!
+
+The alien will present an ordered set of masks.
+You must respond with the correct masks.
+
+Each level has a different rule detemining what
+the correct response is! Follow the clues and 
+the aliens responses to figure out the rule!
+Answer correctly 3 times in a row to progress!
+
+- Green: The mask is correct!
+- Yellow: The mask exists but in another possition
+- Red: The mask is not part of the response"
+horizontal_alignment = 1
+
+[node name="AlienSpacer" type="Control" parent="HBoxContainer" unique_id=744645077]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4

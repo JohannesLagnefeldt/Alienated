@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cabhsbembap0k"]
+
+[ext_resource type="PackedScene" uid="uid://cehdu7qfnj4ti" path="res://scenes/ui/pda.tscn" id="1_7nptk"]
+
+[node name="Node2D" type="Node2D" unique_id=59480222]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1550618484]
+
+[node name="RootContainer" parent="CanvasLayer" unique_id=118315646 instance=ExtResource("1_7nptk")]
