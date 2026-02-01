@@ -1,4 +1,5 @@
 extends Control
+class_name PDA_UI
 
 var mask_selector = preload("res://scenes/ui/mask_select.tscn")
 var log_record = preload("res://scenes/ui/log_record.tscn")

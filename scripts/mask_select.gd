@@ -15,8 +15,8 @@ func _ready() -> void:
 func update_texture(index_diff : int):
 	mask_index += index_diff
 	if mask_index < 0:
-		mask_index = len(Master.MASK_TEXTURES) - 1
-	elif mask_index > len(Master.MASK_TEXTURES) - 1:
+		mask_index = len(Master.current_masks) - 1
+	elif mask_index > len(Master.current_masks) - 1:
 		mask_index = 0
 	mask_texture_rect.texture = Master.MASK_TEXTURES[mask_index]
 
