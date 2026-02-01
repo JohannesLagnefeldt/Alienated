@@ -28,6 +28,20 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1kog"]
 
+[sub_resource type="Gradient" id="Gradient_nxjfj"]
+offsets = PackedFloat32Array(0.31222707, 0.6572052)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u4qax"]
+gradient = SubResource("Gradient_nxjfj")
+width = 30
+height = 30
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_5byqq"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
 [sub_resource type="Animation" id="Animation_u4qax"]
 length = 0.001
 tracks/0/type = "value"
@@ -218,6 +232,21 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_apowk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_vnuwp")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_egh8s")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b1kog")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerSpaceShip" unique_id=743381464]
+position = Vector2(0, 600)
+amount = 200
+texture = SubResource("GradientTexture2D_u4qax")
+emission_shape = 3
+emission_rect_extents = Vector2(200, 0)
+direction = Vector2(0, 1)
+spread = 12.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1500.0
+initial_velocity_max = 2000.0
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+color_ramp = SubResource("Gradient_5byqq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1812419162]
 stream = ExtResource("3_m7x51")
