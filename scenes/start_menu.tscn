@@ -118,6 +118,7 @@ theme_override_font_sizes/font_size = 30
 text = "Exit"
 
 [node name="OptionsMenu" type="CanvasLayer" parent="." unique_id=279103321]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="OptionsMenu" unique_id=1642407155]
 anchors_preset = 15

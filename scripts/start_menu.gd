@@ -1,9 +1,9 @@
 extends Control
 
-@onready var options_menu: VBoxContainer = $OptionsMenu
-@onready var check_button: CheckButton = $VBoxContainer3/VBoxContainer2/CheckButton
-@onready var check_button_2: CheckButton = $VBoxContainer3/VBoxContainer2/CheckButton2
-@onready var check_button_3: CheckButton = $VBoxContainer3/VBoxContainer2/CheckButton3
+@onready var options_menu: CanvasLayer = $OptionsMenu
+@onready var check_button: CheckButton = $OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton
+@onready var check_button_2: CheckButton = $OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton2
+@onready var check_button_3: CheckButton = $OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton3
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var player_space_ship: Sprite2D = $PlayerSpaceShip
 
