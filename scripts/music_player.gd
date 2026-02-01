@@ -4,7 +4,7 @@ extends Node
 @export var interact_level = 1
 @export var tarnsition_strength : float = 2.2
 ## 0 for no music. 1 for menu. 2 for party. 3 for interact
-var current_music := 1
+var current_music := 0
 
 @onready var party: Node = $Party
 @onready var party_pads: AudioStreamPlayer = $Party/PartyPads
@@ -39,11 +39,11 @@ func play_interact():
 func _process(delta: float) -> void:
 	match current_music:
 		0:
-			alienated_mainmenu.volume_linear = 0
+			alienated_mainmenu.volume_linear = 0.0
 			for i in party.get_children():
-				i.volume_linear = 0
+				i.volume_linear = 0.0
 			for i in interact.get_children():
-				i.volume_linear = 0
+				i.volume_linear = 0.0
 		1:
 			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 1.0, delta * tarnsition_strength)
 			for i in party.get_children():
@@ -51,16 +51,22 @@ func _process(delta: float) -> void:
 			for i in interact.get_children():
 				i.volume_linear = lerp(i.volume_linear, 0.0, delta * tarnsition_strength)
 		2:
-			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 0, delta * tarnsition_strength)
+			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 0.0, delta * tarnsition_strength)
 			for i in interact.get_children():
 				i.volume_linear = lerp(i.volume_linear, 0, delta * tarnsition_strength)
-			party_pads.volume_linear = lerp(party_pads.volume_linear, clamp(party_level, 0, 1), delta * tarnsition_strength)
-			party_drums.volume_linear = lerp(party_drums.volume_linear, clamp(party_level, 0, 1), delta * tarnsition_strength)
-			party_bass.volume_linear = lerp(party_bass.volume_linear, clamp(party_level - 1, 0, 1), delta * tarnsition_strength)
-			party_arp.volume_linear = lerp(party_arp.volume_linear, clamp(party_level - 2, 0, 1), delta * tarnsition_strength)
+			party_pads.volume_linear = lerp(party_pads.volume_linear, clampf(party_level, 0.0, 1.0), delta * tarnsition_strength)
+			party_drums.volume_linear = lerp(party_drums.volume_linear, clampf(party_level, 0.0, 1.0), delta * tarnsition_strength)
+			party_bass.volume_linear = lerp(party_bass.volume_linear, clampf(party_level - 1.0, 0.0, 1.0), delta * tarnsition_strength)
+			party_arp.volume_linear = lerp(party_arp.volume_linear, clampf(party_level - 2.0, 0.0, 1.0), delta * tarnsition_strength)
 		3:
 			alienated_mainmenu.volume_linear = lerp(alienated_mainmenu.volume_linear, 0.0, delta * tarnsition_strength)
 			for i in party.get_children():
 				i.volume_linear = lerp(i.volume_linear, 0.0, delta * tarnsition_strength)
-			for i in interact.get_children():
-				i.volume_linear = lerp(i.volume_linear, 1.0, delta * tarnsition_strength)
+			topper.volume_linear = lerp(topper.volume_linear, clampf(interact_level, 0.0, 9.0), delta * tarnsition_strength)
+			bass.volume_linear = lerp(bass.volume_linear, clampf(interact_level, 0.0, 9.0), delta * tarnsition_strength)
+			bass_2.volume_linear = lerp(bass_2.volume_linear, clampf(interact_level - 3, 0.0, 9.0), delta * tarnsition_strength)
+			wawa.volume_linear = lerp(wawa.volume_linear, clampf(interact_level - 3, 0.0, 9.0), delta * tarnsition_strength)
+			kick.volume_linear = lerp(kick.volume_linear, clampf(interact_level - 3, 0.0, 9.0), delta * tarnsition_strength)
+			beat.volume_linear = lerp(beat.volume_linear, clampf(interact_level - 3, 0.0, 9.0), delta * tarnsition_strength)
+			vox.volume_linear = lerp(vox.volume_linear, clampf(interact_level - 3, 0.0, 9.0), delta * tarnsition_strength)
+			fx.volume_linear = lerp(fx.volume_linear, clampf(interact_level - 3, 0.0, 9.0), delta * tarnsition_strength)

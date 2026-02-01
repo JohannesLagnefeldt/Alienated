@@ -79,5 +79,6 @@ func next_level():
 		Signals.emit_signal("game_win")
 		get_tree().change_scene_to_file("res://scenes/Win.tscn")
 	print("current puzzle: " + str(current_puzzle))
+	Music.interact_level = current_puzzle
 	current_masks.append(current_masks[len(current_masks) - 1] + 1)
 	generate_masks()
