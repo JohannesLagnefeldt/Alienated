@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://bio6p7fma1yaq"]
+
+[ext_resource type="PackedScene" uid="uid://cehdu7qfnj4ti" path="res://scenes/ui/pda.tscn" id="1_7nptk"]
+[ext_resource type="Script" uid="uid://q2vh2a70nwt3" path="res://scenes/game_handler.gd" id="1_or4b6"]
+[ext_resource type="PackedScene" uid="uid://cg8lvh3yfo8nr" path="res://scenes/Aliens/mercury.tscn" id="2_5gm6p"]
+[ext_resource type="Script" uid="uid://c7dkfjymnjarq" path="res://scenes/alien_controller.gd" id="2_cela1"]
+[ext_resource type="PackedScene" uid="uid://c5yxvc8m7fkqr" path="res://scenes/Aliens/french_kiss.tscn" id="3_cela1"]
+[ext_resource type="PackedScene" uid="uid://d0rx05smr3kcx" path="res://scenes/Aliens/GravityAlien.tscn" id="4_or4b6"]
+
+[sub_resource type="Animation" id="Animation_or4b6"]
+resource_name = "EyeEnter"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrenchKiss:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(992, -0.25, 0, 0.5, 0, 345, -1, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FrenchKiss:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(146, -0.25, 0, 0.25, 0, 146, -0.33333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_6nh0b"]
+resource_name = "GravityEnter"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Gravity:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1144, -0.25, 0, 0.25, 0, 313, -1, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Gravity:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(141, -0.25, 0, 0.25, 0, 141, -0.33333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_5gm6p"]
+resource_name = "MercuryEnter"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(898, 0, 0, 1.133, 0, 275, -1.238, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-32, 0, 0, 0.33333334, 0, -32, -0.33333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_cela1"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1080, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-32, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FrenchKiss:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(992, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FrenchKiss:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(146, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Gravity:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1144, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Gravity:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(141, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_or4b6"]
+_data = {
+&"EyeEnter": SubResource("Animation_or4b6"),
+&"GravityEnter": SubResource("Animation_6nh0b"),
+&"MercuryEnter": SubResource("Animation_5gm6p"),
+&"RESET": SubResource("Animation_cela1")
+}
+
+[node name="Game" type="Node2D" unique_id=59480222]
+script = ExtResource("1_or4b6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1550618484]
+
+[node name="PDAUI" parent="CanvasLayer" unique_id=118315646 instance=ExtResource("1_7nptk")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=46357714]
+position = Vector2(0, 64)
+
+[node name="Characters" type="Node2D" parent="." unique_id=1210254818]
+script = ExtResource("2_cela1")
+
+[node name="Mercury" parent="Characters" unique_id=2024355123 instance=ExtResource("2_5gm6p")]
+position = Vector2(1080, -32)
+
+[node name="FrenchKiss" parent="Characters" unique_id=805710949 instance=ExtResource("3_cela1")]
+position = Vector2(992, 146)
+scale = Vector2(0.31436068, 0.31436068)
+
+[node name="Gravity" parent="Characters" unique_id=2108504642 instance=ExtResource("4_or4b6")]
+position = Vector2(1144, 141)
+scale = Vector2(0.4293315, 0.4293315)
+
+[node name="CharacterChanger" type="AnimationPlayer" parent="Characters" unique_id=477507115]
+root_node = NodePath("../Mercury")
+libraries/ = SubResource("AnimationLibrary_or4b6")
+autoplay = &"EyeEnter"
+
+[node name="Timer" type="Timer" parent="Characters" unique_id=670704998]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Characters" unique_id=123567535]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="animation_finished" from="Characters/CharacterChanger" to="Characters" method="_on_character_changer_animation_finished"]
+[connection signal="timeout" from="Characters/Timer" to="Characters" method="_on_timer_timeout"]
+[connection signal="timeout" from="Characters/Timer2" to="Characters" method="_on_timer_2_timeout"]

@@ -45,6 +45,7 @@ func _input(event: InputEvent) -> void:
 		Signals.emit_signal("update_masks")
 		Signals.emit_signal("point_change", Master.correct_guesses)
 		if Master.correct_guesses == 3:
+			pda_ui.clear_log()
 			Signals.emit_signal("level_win")
 			pda_ui.turn_off_lights()
 			Master.next_level()
