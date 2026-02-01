@@ -1166,7 +1166,7 @@ horizontal_alignment = 2
 [node name="Name4" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1175620889]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Johannes Lagnefeldt"
+text = "Lego Man"
 
 [node name="Spacer4" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=138661366]
 custom_minimum_size = Vector2(50, 0)
@@ -1181,7 +1181,7 @@ horizontal_alignment = 2
 [node name="Name5" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=698395848]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "LimeVonHnase"
+text = "Lime Von Hnase"
 
 [node name="Spacer5" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1331369664]
 custom_minimum_size = Vector2(50, 0)
@@ -1211,7 +1211,7 @@ horizontal_alignment = 2
 [node name="Name7" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=370784341]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "SamuelSB"
+text = "Samuel SB"
 
 [node name="Spacer7" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=592495303]
 custom_minimum_size = Vector2(50, 0)
