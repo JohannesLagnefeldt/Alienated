@@ -1035,3 +1035,5 @@ texture = ExtResource("2_ixbsq")
 root_node = NodePath("../DiamondPivot/Diamond")
 libraries/ = SubResource("AnimationLibrary_hijx7")
 autoplay = &"StarDiamond"
+
+[connection signal="animation_finished" from="Body/MaskArm/TentacleMask/Node2D/MaskRevealAnimator" to="Body/MaskArm/TentacleMask/Node2D" method="_on_mask_reveal_animator_animation_finished"]

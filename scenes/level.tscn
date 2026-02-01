@@ -24,7 +24,7 @@ position = Vector2(391, 162)
 scale = Vector2(0.32189304, 0.32189304)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=606695143]
-visible = false
 
 [node name="UI" parent="CanvasLayer" unique_id=838816338 instance=ExtResource("2_w7c3h")]
-visible = false
+
+[editable path="Node2D/Mercury"]

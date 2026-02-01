@@ -489,3 +489,5 @@ libraries/ = SubResource("AnimationLibrary_m3rlv")
 position = Vector2(519, -1037)
 rotation = 0.16483295
 scale = Vector2(0.26379636, 0.26379636)
+
+[connection signal="animation_finished" from="BodyHolder/Node2D/MaskRevealAnimator" to="BodyHolder/Node2D" method="_on_mask_reveal_animator_animation_finished"]

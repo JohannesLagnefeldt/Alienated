@@ -1357,3 +1357,5 @@ position = Vector2(975.9999, -526)
 rotation = 0.18258801
 scale = Vector2(0.28014243, 0.25835997)
 skew = -0.07047212
+
+[connection signal="animation_finished" from="Node2D/Node2D/Node2D2/TongueLeftBack/Node2D/MaskRevealAnimator" to="Node2D/Node2D/Node2D2/TongueLeftBack/Node2D" method="_on_mask_reveal_animator_animation_finished"]

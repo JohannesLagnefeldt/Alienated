@@ -2,110 +2,473 @@
 
 [ext_resource type="Texture2D" uid="uid://dh4mo0pimf8l3" path="res://assets/PlaceHolder Menu Background.png" id="1_ouf4f"]
 [ext_resource type="Script" uid="uid://cyshjuatqgvvb" path="res://scripts/start_menu.gd" id="1_thu50"]
+[ext_resource type="Texture2D" uid="uid://dd7wlcm4lm5dc" path="res://assets/sprites/MenuRocket/Rocket menu.png" id="3_h61rw"]
 [ext_resource type="AudioStream" uid="uid://dogsabwo0xxms" path="res://assets/sfx/alienated_ui_ok.wav" id="3_m7x51"]
+[ext_resource type="Texture2D" uid="uid://b5ju61mmg27m6" path="res://assets/sprites/MenuRocket/Rocket In Danger.png" id="5_4v6gu"]
+[ext_resource type="Texture2D" uid="uid://pqlpyryk06g1" path="res://assets/sprites/MenuRocket/Rocket Crashing.png" id="6_nxjfj"]
+[ext_resource type="AudioStream" uid="uid://bep2p3x4phrh6" path="res://assets/sfx/alienated_spaceship_fx.wav" id="7_u4qax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcv5n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4v6gu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxjfj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4qax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5byqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e58y3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apowk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnuwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egh8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1kog"]
+
+[sub_resource type="Animation" id="Animation_u4qax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSpaceShip:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2810717]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSpaceShip:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_h61rw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSpaceShip:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500, 300)]
+}
+
+[sub_resource type="Animation" id="Animation_5byqq"]
+resource_name = "ShipCrashing"
+length = 5.5235
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSpaceShip:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_4v6gu"), ExtResource("6_nxjfj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSpaceShip:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.8333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.2810717, 1.2810717, -6.283185307179586]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSpaceShip:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.8333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(500, 300), Vector2(500, 300), Vector2(1200, 1000)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Craching")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/3/use_blend = true
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_scene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_e58y3"]
+resource_name = "ShipIdle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSpaceShip:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.2810717, 1.4067354, 1.2810716709638374]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apowk"]
+_data = {
+&"RESET": SubResource("Animation_u4qax"),
+&"ShipCrashing": SubResource("Animation_5byqq"),
+&"ShipIdle": SubResource("Animation_e58y3")
+}
 
 [node name="StartMenu" type="Control" unique_id=282439887]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_thu50")
 
-[node name="PlaceHolderMenuBackground" type="Sprite2D" parent="." unique_id=1094779566]
+[node name="Background" type="TextureRect" parent="." unique_id=1601386176]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_ouf4f")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2004735886]
-layout_mode = 1
+[node name="PlayerSpaceShip" type="Sprite2D" parent="." unique_id=580117552]
+position = Vector2(500, 300)
+rotation = 1.2810717
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_h61rw")
+
+[node name="Play" type="Button" parent="PlayerSpaceShip" unique_id=1566046146]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -106.0
-offset_right = 34.0
-offset_bottom = 106.0
+offset_left = -1163.8268
+offset_top = -1158.6987
+offset_right = -555.3578
+offset_bottom = -816.072
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
+rotation = -1.0908308
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fcv5n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4v6gu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nxjfj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u4qax")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5byqq")
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=1566046146]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Play"
-
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=404724086]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Options"
-
-[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1069988943]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Credits"
-
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=336566454]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Exit"
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=743858965]
-visible = false
-layout_mode = 1
+[node name="Options" type="Button" parent="PlayerSpaceShip" unique_id=404724086]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.5
-offset_top = -57.5
-offset_right = 76.5
-offset_bottom = 57.5
+offset_left = -1287.2104
+offset_top = -437.60016
+offset_right = -758.7075
+offset_bottom = -191.30524
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer2" type="GridContainer" parent="VBoxContainer3" unique_id=807320867]
-layout_mode = 2
-columns = 2
-
-[node name="Label" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=825256359]
-layout_mode = 2
-text = "Music"
-
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1296683987]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=295056737]
-layout_mode = 2
-text = "Sound Effects"
-
-[node name="CheckButton2" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1075242719]
-layout_mode = 2
-
-[node name="Label3" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=557339227]
-layout_mode = 2
-text = "Fullscreen"
-
-[node name="CheckButton3" type="CheckButton" parent="VBoxContainer3/VBoxContainer2" unique_id=1727130418]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer3" unique_id=1148875928]
-layout_mode = 2
-text = "Back"
+rotation = -1.6196655
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e58y3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_apowk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vnuwp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_egh8s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b1kog")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1812419162]
 stream = ExtResource("3_m7x51")
 bus = &"SFX"
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
-[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton2" to="." method="_on_check_button_2_toggled"]
-[connection signal="toggled" from="VBoxContainer3/VBoxContainer2/CheckButton3" to="." method="_on_check_button_3_toggled"]
-[connection signal="button_down" from="VBoxContainer3/Button" to="." method="_on_button_button_down"]
+[node name="Credits" type="Button" parent="." unique_id=1069988943]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Exit" type="Button" parent="." unique_id=336566454]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 68.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[node name="OptionsMenu" type="CanvasLayer" parent="." unique_id=279103321]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="OptionsMenu" unique_id=1642407155]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="OptionsMenu" unique_id=1121790716]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="hBox" type="VBoxContainer" parent="OptionsMenu/CenterContainer" unique_id=743858965]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="GridContainer" parent="OptionsMenu/CenterContainer/hBox" unique_id=807320867]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/CenterContainer/hBox/VBoxContainer2" unique_id=825256359]
+layout_mode = 2
+text = "Music"
+
+[node name="CheckButton" type="CheckButton" parent="OptionsMenu/CenterContainer/hBox/VBoxContainer2" unique_id=1296683987]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="OptionsMenu/CenterContainer/hBox/VBoxContainer2" unique_id=295056737]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="CheckButton2" type="CheckButton" parent="OptionsMenu/CenterContainer/hBox/VBoxContainer2" unique_id=1075242719]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="OptionsMenu/CenterContainer/hBox/VBoxContainer2" unique_id=557339227]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="CheckButton3" type="CheckButton" parent="OptionsMenu/CenterContainer/hBox/VBoxContainer2" unique_id=1727130418]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="OptionsMenu/CenterContainer/hBox" unique_id=1148875928]
+layout_mode = 2
+text = "Back"
+
+[node name="CreditsMenu" type="CanvasLayer" parent="." unique_id=2146117185]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CreditsMenu" unique_id=1257859505]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3083999, 0.3083999, 0.3083999, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="CreditsMenu" unique_id=82678199]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsMenu/CenterContainer" unique_id=498771729]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CreditsMenu/CenterContainer/VBoxContainer" unique_id=1073215497]
+layout_mode = 2
+columns = 3
+
+[node name="Name" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=170444207]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "cowboycade"
+
+[node name="Spacer" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1849173054]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=259528989]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio, Music"
+horizontal_alignment = 2
+
+[node name="Name2" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1071688972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Gerne"
+
+[node name="Spacer2" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=359585346]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role2" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1204850139]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2D Art"
+horizontal_alignment = 2
+
+[node name="Name3" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1241751981]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Kasky"
+
+[node name="Spacer3" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=640489600]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role3" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=2116648459]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development"
+horizontal_alignment = 2
+
+[node name="Name4" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1175620889]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Johannes Lagnefeldt"
+
+[node name="Spacer4" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=138661366]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role4" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=72259033]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development, Programming"
+horizontal_alignment = 2
+
+[node name="Name5" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=698395848]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "LimeVonHnase"
+
+[node name="Spacer5" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1331369664]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role5" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=500438892]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development, Programming"
+horizontal_alignment = 2
+
+[node name="Name6" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=434387000]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Pranav Kalambi"
+
+[node name="Spacer6" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=254693870]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role6" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1739384857]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2D Art"
+horizontal_alignment = 2
+
+[node name="Name7" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=370784341]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SamuelSB"
+
+[node name="Spacer7" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=592495303]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role7" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=502660663]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development Programming"
+horizontal_alignment = 2
+
+[node name="Name8" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=761791258]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "vakninir"
+
+[node name="Spacer8" type="Control" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=1542445142]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Role8" type="Label" parent="CreditsMenu/CenterContainer/VBoxContainer/GridContainer" unique_id=721474420]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Development, Programming"
+horizontal_alignment = 2
+
+[node name="CreditsBack" type="Button" parent="CreditsMenu/CenterContainer/VBoxContainer" unique_id=1963129002]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=720927778]
+libraries/ = SubResource("AnimationLibrary_apowk")
+
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=122811866]
+stream = ExtResource("7_u4qax")
+autoplay = true
+bus = &"SFX"
+
+[node name="Craching" type="AudioStreamPlayer" parent="." unique_id=534753722]
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerSpaceShip/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="PlayerSpaceShip/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="PlayerSpaceShip/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerSpaceShip/Options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="PlayerSpaceShip/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="toggled" from="OptionsMenu/CenterContainer/hBox/VBoxContainer2/CheckButton3" to="." method="_on_check_button_3_toggled"]
+[connection signal="button_down" from="OptionsMenu/CenterContainer/hBox/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="CreditsMenu/CenterContainer/VBoxContainer/CreditsBack" to="." method="_on_credits_back_pressed"]

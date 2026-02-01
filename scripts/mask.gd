@@ -1,4 +1,5 @@
 extends Panel
+class_name Mask
 
 var mouse_hovering: bool = false
 var styleBox: StyleBoxTexture = get_theme_stylebox("panel").duplicate()
